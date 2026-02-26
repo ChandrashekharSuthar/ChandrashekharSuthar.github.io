@@ -1,358 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weave Labs | Powered by PixelStrategy</title>
-    <meta name="description" content="Premium B2B clothing manufacturing and white-label apparel solutions.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --bg-color: #0a0a0a;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            --accent: #3b82f6;
-            --border: #333333;
-            --font-body: 'Manrope', sans-serif;
-            --font-head: 'Space Grotesk', sans-serif;
-            --header-height: 80px; /* Defined for offset calculation */
-        }
-
-        html {
-            scroll-behavior: smooth; /* Enables the smooth gliding effect */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3 {
-            font-family: var(--font-head);
-            font-weight: 700;
-            line-height: 1.1;
-            text-transform: uppercase;
-        }
-
-        h1 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -2px; }
-        h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem; }
-        p { color: var(--text-muted); font-size: 1.1rem; max-width: 60ch; }
-
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* This class ensures the sticky header doesn't cover the section title when scrolling */
-        section {
-            scroll-margin-top: var(--header-height);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--text-main);
-            color: var(--bg-color);
-            font-weight: 800;
-            font-family: var(--font-head);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--text-main);
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--text-main);
-        }
-
-        /* --- HEADER --- */
-        header {
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-
-        .nav-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            font-family: var(--font-head);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: var(--text-main);
-        }
-
-        .logo span { color: var(--accent); }
-
-        nav ul { display: flex; gap: 3rem; }
-        nav a { 
-            font-size: 0.95rem; 
-            font-weight: 500; 
-            color: var(--text-muted);
-            position: relative;
-        }
-
-        nav a:hover { color: var(--text-main); }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover::after { width: 100%; }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            /* Reset scroll margin for hero since it's at the top */
-            scroll-margin-top: 0; 
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 span {
-            display: block;
-            color: transparent;
-            -webkit-text-stroke: 1px var(--text-main);
-        }
-
-        .hero-sub {
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-            border-left: 2px solid var(--accent);
-            padding-left: 1rem;
-        }
-
-        .glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
-            top: 50%;
-            right: -10%;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-
-        /* --- SECTIONS --- */
-        .capabilities { padding: 8rem 0; }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-        }
-
-        .card {
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-            transition: 0.3s;
-        }
-
-        .card:hover { border-color: var(--accent); }
-        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .card-number { font-family: var(--font-head); color: var(--accent); font-size: 3rem; opacity: 0.5; margin-bottom: 0.5rem; }
-
-        .showcase { padding: 4rem 0; }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            background-color: #222;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: 0.5s;
-        }
-
-        .gallery-item:hover img { opacity: 1; transform: scale(1.05); }
-
-        .caption {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            background: #000;
-            padding: 0.5rem 1rem;
-            font-family: var(--font-head);
-            font-size: 0.9rem;
-        }
-
-        .cta {
-            padding: 8rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            background: #0f0f0f;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 3rem 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.8rem;
-            color: #555;
-        }
-
-        .legal-box {
-            border: 1px dashed #444;
-            padding: 1rem;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; }
-            nav ul { gap: 1.5rem; }
-            :root { --header-height: 70px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Android Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
+.container{max-width:1000px;margin:auto;padding:20px}
+header{padding:80px 20px;text-align:center}
+header h1{font-size:42px;margin-bottom:10px}
+header p{color:#94a3b8;margin-bottom:20px}
+.btn{display:inline-block;padding:12px 24px;background:#38bdf8;color:#0f172a;
+text-decoration:none;border-radius:6px;font-weight:bold}
+section{padding:60px 0;border-top:1px solid #1e293b}
+h2{margin-bottom:20px;font-size:28px}
+.card{background:#1e293b;padding:20px;border-radius:8px;margin-bottom:20px}
+.skills span{display:inline-block;background:#1e293b;
+padding:8px 14px;border-radius:20px;margin:5px;font-size:14px}
+footer{text-align:center;padding:30px 0;border-top:1px solid #1e293b;
+color:#94a3b8;font-size:14px}
+a{color:#38bdf8;text-decoration:none}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container nav-flex">
-            <div class="logo">WEAVE <span>LABS</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#fabrics">Fabrics</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="container">
+<h1>Your Name</h1>
+<p>Android Developer | Kotlin | Java | Clean Architecture</p>
+<a href="#contact" class="btn">Contact Me</a>
+</header>
 
-    <section class="hero">
-        <div class="glow"></div>
-        <div class="container hero-content">
-            <h1>Engineered<br><span>Apparel</span></h1>
-            <div class="hero-sub">
-                <p>We provide high-fidelity white-label manufacturing for modern streetwear brands. From raw thread to final stitch, we control the quality.</p>
-            </div>
-            <a href="#contact" class="btn">Request Fabric Kit</a>
-        </div>
-    </section>
+<section class="container">
+<h2>About Me</h2>
+<p>
+I’m an Android app developer with over two years of experience building high-quality, user-focused applications using Java and Kotlin. I specialize in clean architecture, smooth user experiences, and complete Play Store deployment from development to release.
+</p>
+<p>
+I work closely with clients to ensure every app aligns with their vision and delivers real value. I enjoy transforming ambitious ideas into reliable, scalable applications built with precision and attention to detail.
+</p>
+</section>
 
-    <section id="process" class="capabilities">
-        <div class="container">
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-number">01.</div>
-                    <h3>Precision Cutting</h3>
-                    <p>Laser-guided pattern cutting ensures every garment is identical to the millimeter. Zero variance for your bulk orders.</p>
-                </div>
-                <div class="card">
-                    <div class="card-number">02.</div>
-                    <h3>Heavyweight GSM</h3>
-                    <p>We specialize in luxury heavyweight cottons (240-400 GSM). The hand-feel your customers expect from a premium brand.</p>
-                </div>
-                <div class="card">
-                    <div class="card-number">03.</div>
-                    <h3>Sustainable Dye</h3>
-                    <p>Closed-loop water systems and eco-friendly pigments. Bold colors that don't bleed and don't hurt the planet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container">
+<h2>Projects</h2>
 
-    <section id="fabrics" class="showcase">
-        <div class="container">
-            <h2>Fabric <span style="color:var(--accent)">Science</span></h2>
-            <p>A closer look at our texture and print resolution.</p>
+<div class="card">
+<h3>Badminton Match Tracking App</h3>
+<p>Match setup, scoring system, results sharing using Navigation Components and Kotlin.</p>
+</div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1534960680480-ca9853707e10?q=80&w=2000&auto=format&fit=crop" alt="Premium Fabric Texture">
-                    <div class="caption">400 GSM FRENCH TERRY</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1564859228273-274232fdb516?q=80&w=1000&auto=format&fit=crop" alt="DTG Printing">
-                    <div class="caption">HIGH-RES DTG PRINTING</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Zoom Meeting Scheduler</h3>
+<p>Android app integrating Zoom API with Retrofit for scheduling meetings.</p>
+</div>
 
-    <section id="contact" class="cta">
-        <div class="container">
-            <h2>Ready to Scale?</h2>
-            <p style="margin: 1rem auto 2rem auto;">Join 50+ Brands using Weave Labs for their manufacturing.</p>
-            <a href="mailto:hello@weavelabs.fake" class="btn">Start Your Order</a>
-        </div>
-    </section>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="logo" style="margin-bottom: 1rem; opacity: 0.5;">WEAVE LABS</div>
-            <p>&copy; 2026 Weave Labs B2B Solutions. All Rights Reserved.</p>
-            
-            <div class="legal-box">
-                <strong>ACADEMIC DISCLAIMER:</strong><br>
-                This website is a student project created for an MSc Digital Marketing practical file. 
-                "Weave Labs" is a fictional entity.
-            </div>
-        </div>
-    </footer>
+<section class="container">
+<h2>Skills</h2>
+<div class="skills">
+<span>Kotlin</span>
+<span>Java</span>
+<span>Android SDK</span>
+<span>MVVM</span>
+<span>Clean Architecture</span>
+<span>Retrofit</span>
+<span>Firebase</span>
+<span>REST APIs</span>
+</div>
+</section>
+
+<section class="container" id="contact">
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+<p>GitHub: <a href="#">github.com/yourusername</a></p>
+<p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+</section>
+
+<footer>
+© 2026 Your Name. All rights reserved.
+</footer>
 
 </body>
 </html>
