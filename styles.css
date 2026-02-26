@@ -1119,6 +1119,44 @@ body {
     color: var(--accent);
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+}
+
+[data-theme="light"] .scroll-to-top {
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hero-layout {

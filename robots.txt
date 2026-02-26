@@ -1,0 +1,10 @@
+# robots.txt for Chandra Shekhar Suthar Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://chandrashekharSuthar.github.io/sitemap.xml
+
+# Disallow specific paths (if any)
+Disallow: /images/
