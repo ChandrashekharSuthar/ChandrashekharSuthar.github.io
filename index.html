@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan | Android Developer</title>
+    <title>Chandra Shekhar Suthar | Android Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     <nav class="nav">
         <div class="container">
             <div class="nav-content">
-                <a href="#" class="logo">AM</a>
+                <a href="#" class="logo">Chandra Shekhar Suthar</a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
@@ -40,35 +40,43 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <canvas id="particleCanvas"></canvas>
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-badge">
-                    <span class="status-dot"></span>
-                    Available for freelance work
+            <div class="hero-layout">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        Available for freelance work
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Chandra Shekhar Suthar</span>
+                    </h1>
+                    <p class="hero-subtitle">Android Developer | Kotlin & Java Specialist</p>
+                    <p class="hero-description">
+                        I craft elegant mobile experiences with clean architecture and pixel-perfect design. 
+                        Transforming ideas into scalable Android applications.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i>
+                            Hire on Fiverr
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-coffee"></i>
+                            Buy Me a Coffee
+                        </a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://github.com/ChandrashekharSuthar" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:shekharsuthar1030@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Alex Morgan</span>
-                </h1>
-                <p class="hero-subtitle">Android Developer | Kotlin & Java Specialist</p>
-                <p class="hero-description">
-                    I craft elegant mobile experiences with clean architecture and pixel-perfect design. 
-                    Transforming ideas into scalable Android applications.
-                </p>
-                <div class="hero-cta">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-briefcase"></i>
-                        Hire on Fiverr
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-coffee"></i>
-                        Buy Me a Coffee
-                    </a>
-                </div>
-                <div class="hero-socials">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                <div class="hero-image" data-aos="fade-left">
+                    <div class="profile-pic-wrapper">
+                        <img src="images/profile_pic.jpeg" alt="Chandra Shekhar Suthar" class="profile-pic">
+                        <div class="profile-pic-border"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,6 +102,20 @@
                         When I'm not coding, you'll find me exploring new technologies, contributing to 
                         open-source projects, or sharing knowledge with the developer community.
                     </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clean Architecture Expert</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Play Store Publishing</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Agile Development</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-stats" data-aos="fade-left">
                     <div class="stat-card">
@@ -301,8 +323,8 @@
                         <span>Gaming</span>
                     </div>
                     <div class="interest-item">
-                        <i class="fas fa-hiking"></i>
-                        <span>Hiking</span>
+                        <i class="fas fa-futbol"></i>
+                        <span>Sports</span>
                     </div>
                     <div class="interest-item">
                         <i class="fas fa-music"></i>
@@ -323,33 +345,42 @@
 
             <div class="contact-content">
                 <div class="contact-cards">
-                    <a href="mailto:alex.morgan@example.com" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <p>alex.morgan@example.com</p>
-                    </a>
+                        <p class="contact-value">shekharsuthar1030@gmail.com</p>
+                        <button class="copy-btn" onclick="copyToClipboard('shekharsuthar1030@gmail.com', this)">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
 
-                    <a href="#" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="contact-icon">
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/alexmorgan</p>
-                    </a>
+                        <p class="contact-value">View Profile</p>
+                        <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/" target="_blank" class="visit-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit
+                        </a>
+                    </div>
 
-                    <a href="#" class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="contact-icon">
                             <i class="fab fa-github"></i>
                         </div>
                         <h3>GitHub</h3>
-                        <p>github.com/alexmorgan</p>
-                    </a>
+                        <p class="contact-value">@ChandrashekharSuthar</p>
+                        <a href="https://github.com/ChandrashekharSuthar" target="_blank" class="visit-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit
+                        </a>
+                    </div>
                 </div>
 
                 <div class="contact-links" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#" class="contact-link-btn">
+                    <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="contact-link-btn">
                         <i class="fas fa-briefcase"></i>
                         <div>
                             <strong>Hire me on Fiverr</strong>
@@ -372,12 +403,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
+                <p>&copy; 2026 Chandra Shekhar Suthar. Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
                 <div class="footer-socials">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/ChandrashekharSuthar"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:shekharsuthar1030@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>

@@ -6,6 +6,251 @@ AOS.init({
     offset: 100
 });
 
+// Cursor Trail Effect in Hero Section
+const hero = document.querySelector('.hero');
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+
+let cursorTrail = [];
+const maxTrailLength = 20;
+
+// Set canvas size
+function resizeCanvas() {
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Track mouse position in hero section
+let mouseX = 0;
+let mouseY = 0;
+let isInHero = false;
+
+hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+    isInHero = true;
+    
+    // Add trail point
+    cursorTrail.push({
+        x: mouseX,
+        y: mouseY,
+        size: Math.random() * 15 + 10,
+        life: 1,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        color: Math.random() > 0.5 ? 'rgba(56, 189, 248, ' : 'rgba(102, 126, 234, '
+    });
+    
+    if (cursorTrail.length > maxTrailLength) {
+        cursorTrail.shift();
+    }
+});
+
+hero.addEventListener('mouseleave', () => {
+    isInHero = false;
+});
+
+// Floating scientific symbols and coding elements
+const symbols = [
+    // Math & Science
+    '⚛', '∞', '∑', '∫', '√', 'π', 'Δ', '∇', 'Ω', '≈', '≠', '∂', 'λ', 'μ', 'σ',
+    // Coding symbols
+    '{', '}', '<', '>', '/', '\\', '(', ')', '[', ']', ';', ':', '=', '+', '-',
+    // Programming
+    '0', '1', 'fn', 'if', 'AI', 'ML', 'API', 'DB', 'UI', 'UX',
+    // Special
+    '⌘', '⚡', '★', '◆', '●', '■', '▲', '▼', '◀', '▶', '♦', '♣', '♠', '♥'
+];
+let floatingElements = [];
+
+class FloatingElement {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.type = Math.random();
+        
+        if (this.type < 0.7) {
+            // Text symbol
+            this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
+            this.size = Math.random() * 30 + 12; // Varied size: 12-42px
+            this.isShape = false;
+        } else {
+            // Geometric shape
+            this.shapeType = Math.floor(Math.random() * 4); // 0: circle, 1: square, 2: triangle, 3: hexagon
+            this.size = Math.random() * 25 + 8; // Varied size: 8-33px
+            this.isShape = true;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+        }
+        
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.vx = 0;
+        this.vy = 0;
+        // Smaller elements are more transparent
+        this.opacity = (this.size / 40) * 0.4 + 0.1;
+    }
+
+    draw() {
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        
+        if (this.isShape) {
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            ctx.strokeStyle = 'rgba(56, 189, 248, 1)';
+            ctx.lineWidth = 2;
+            
+            switch(this.shapeType) {
+                case 0: // Circle
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                    ctx.stroke();
+                    break;
+                case 1: // Square
+                    ctx.strokeRect(-this.size, -this.size, this.size * 2, this.size * 2);
+                    break;
+                case 2: // Triangle
+                    ctx.beginPath();
+                    ctx.moveTo(0, -this.size);
+                    ctx.lineTo(this.size, this.size);
+                    ctx.lineTo(-this.size, this.size);
+                    ctx.closePath();
+                    ctx.stroke();
+                    break;
+                case 3: // Hexagon
+                    ctx.beginPath();
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (Math.PI / 3) * i;
+                        const x = this.size * Math.cos(angle);
+                        const y = this.size * Math.sin(angle);
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.stroke();
+                    break;
+            }
+            this.rotation += this.rotationSpeed;
+        } else {
+            ctx.font = `${this.size}px monospace`;
+            ctx.fillStyle = 'rgba(56, 189, 248, 1)';
+            ctx.fillText(this.symbol, this.x, this.y);
+        }
+        
+        ctx.restore();
+    }
+
+    update() {
+        if (isInHero) {
+            // Calculate distance from cursor
+            let dx = mouseX - this.x;
+            let dy = mouseY - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // Move away from cursor
+            if (distance < 150) {
+                let angle = Math.atan2(dy, dx);
+                let force = (150 - distance) / 150;
+                this.vx -= Math.cos(angle) * force * 3;
+                this.vy -= Math.sin(angle) * force * 3;
+            }
+        }
+        
+        // Apply velocity
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Friction
+        this.vx *= 0.95;
+        this.vy *= 0.95;
+        
+        // Return to base position
+        this.x += (this.baseX - this.x) * 0.05;
+        this.y += (this.baseY - this.y) * 0.05;
+        
+        // Keep in bounds
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+    }
+}
+
+// Initialize floating elements
+function initFloatingElements() {
+    floatingElements = [];
+    for (let i = 0; i < 35; i++) {
+        floatingElements.push(new FloatingElement());
+    }
+}
+initFloatingElements();
+
+// Animation loop
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw floating elements
+    floatingElements.forEach(element => {
+        element.update();
+        element.draw();
+    });
+    
+    // Draw cursor trail
+    cursorTrail.forEach((point, index) => {
+        point.life -= 0.02;
+        point.x += point.vx;
+        point.y += point.vy;
+        point.size *= 0.96;
+        
+        if (point.life > 0) {
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, point.size, 0, Math.PI * 2);
+            ctx.fillStyle = point.color + (point.life * 0.3) + ')';
+            ctx.fill();
+            
+            // Glow effect
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = point.color + '0.5)';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+    });
+    
+    // Remove dead trail points
+    cursorTrail = cursorTrail.filter(point => point.life > 0);
+    
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Reinitialize on resize
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    initFloatingElements();
+});
+
+// Copy to clipboard function
+function copyToClipboard(text, button) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+    });
+}
+
+
+
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -94,14 +339,7 @@ if (subtitle) {
     setTimeout(typeWriter, 500);
 }
 
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+// Removed parallax effect - keeping it simple
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
