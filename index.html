@@ -13,17 +13,22 @@
     <!-- Primary Meta Tags -->
     <title>Chandra Shekhar Suthar | Android Developer | Kotlin & Java Expert</title>
     <meta name="title" content="Chandra Shekhar Suthar | Android Developer | Kotlin & Java Expert">
-    <meta name="description" content="Experienced Android Developer specializing in Kotlin, Java, and Clean Architecture. Building elegant mobile applications with MVVM, Jetpack Compose, and modern Android development practices.">
-    <meta name="keywords" content="Android Developer, Kotlin Developer, Java Developer, Mobile App Development, Android Apps, Jetpack Compose, MVVM, Clean Architecture, Firebase, Freelance Android Developer">
+    <meta name="description" content="Experienced Android Developer from Udaipur, Rajasthan, India specializing in Kotlin, Java, and Clean Architecture. Building elegant mobile applications with MVVM, Jetpack Compose, and modern Android development practices.">
+    <meta name="keywords" content="Android Developer, Kotlin Developer, Java Developer, Mobile App Development, Android Apps, Jetpack Compose, MVVM, Clean Architecture, Firebase, Freelance Android Developer, Udaipur, Rajasthan, India">
     <meta name="author" content="Chandra Shekhar Suthar">
     <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="IN-RJ">
+    <meta name="geo.placename" content="Udaipur">
+    <meta name="geo.position" content="24.585445;73.712479">
+    <meta name="ICBM" content="24.585445, 73.712479">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chandrashekharSuthar.github.io/">
     <meta property="og:title" content="Chandra Shekhar Suthar | Android Developer | Kotlin & Java Expert">
-    <meta property="og:description" content="Experienced Android Developer specializing in Kotlin, Java, and Clean Architecture. Building elegant mobile applications with modern Android development practices.">
+    <meta property="og:description" content="Experienced Android Developer from Udaipur, Rajasthan, India specializing in Kotlin, Java, and Clean Architecture. Building elegant mobile applications with modern Android development practices.">
     <meta property="og:image" content="https://chandrashekharSuthar.github.io/images/profile_pic.jpeg">
+    <meta property="og:locale" content="en_IN">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -50,8 +55,11 @@
     <link rel="canonical" href="https://chandrashekharSuthar.github.io/">
 </head>
 <body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="logo">Chandra Shekhar Suthar</a>
@@ -82,8 +90,8 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="particleCanvas"></canvas>
+    <section class="hero" id="main-content" role="main" aria-label="Introduction">
+        <canvas id="particleCanvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-content" data-aos="fade-up">
@@ -95,6 +103,10 @@
                         Hi, I'm <span class="gradient-text">Chandra Shekhar Suthar</span>
                     </h1>
                     <p class="hero-subtitle">Android Developer | Kotlin & Java Specialist</p>
+                    <p class="hero-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Udaipur, Rajasthan, India
+                    </p>
                     <p class="hero-description">
                         I craft elegant mobile experiences with clean architecture and pixel-perfect design. 
                         Transforming ideas into scalable Android applications.
@@ -109,10 +121,10 @@
                             Buy Me a Coffee
                         </a>
                     </div>
-                    <div class="hero-socials">
-                        <a href="https://github.com/ChandrashekharSuthar" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:shekharsuthar1030@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    <div class="hero-socials" role="list" aria-label="Social media links">
+                        <a href="https://github.com/ChandrashekharSuthar" class="social-link" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="mailto:shekharsuthar1030@gmail.com" class="social-link" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left">
@@ -126,9 +138,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section" role="region" aria-labelledby="about-heading">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <h2 id="about-heading" class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
                     <p class="lead">
@@ -179,9 +191,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
+    <section id="projects" class="section section-alt" role="region" aria-labelledby="projects-heading">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <h2 id="projects-heading" class="section-title" data-aos="fade-up">Featured Projects</h2>
             <p class="section-subtitle" data-aos="fade-up">Some of my recent work that I'm proud of</p>
             
             <div class="projects-grid">
@@ -281,9 +293,9 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section" role="region" aria-labelledby="skills-heading">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+            <h2 id="skills-heading" class="section-title" data-aos="fade-up">Skills & Technologies</h2>
             
             <div class="skills-container">
                 <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
@@ -379,9 +391,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section section-alt" role="region" aria-labelledby="contact-heading">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Let's Work Together</h2>
+            <h2 id="contact-heading" class="section-title" data-aos="fade-up">Let's Work Together</h2>
             <p class="section-subtitle" data-aos="fade-up">
                 Have a project in mind? Let's create something amazing together.
             </p>
@@ -446,12 +458,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Chandra Shekhar Suthar. Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
-                <div class="footer-socials">
-                    <a href="https://github.com/ChandrashekharSuthar"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:shekharsuthar1030@gmail.com"><i class="fas fa-envelope"></i></a>
+                <p>&copy; 2026 Chandra Shekhar Suthar • Udaipur, Rajasthan, India • Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
+                <div class="footer-socials" role="list" aria-label="Footer social media links">
+                    <a href="https://github.com/ChandrashekharSuthar" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="mailto:shekharsuthar1030@gmail.com" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 </div>
+            </div>
+            <!-- Open Source Notice -->
+            <div style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <p>Open source template • Replace personal info with yours • <a href="LICENSE" style="color: var(--accent); text-decoration: none;">View License</a></p>
             </div>
         </div>
     </footer>
