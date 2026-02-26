@@ -1,85 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Android Developer</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
-.container{max-width:1000px;margin:auto;padding:20px}
-header{padding:80px 20px;text-align:center}
-header h1{font-size:42px;margin-bottom:10px}
-header p{color:#94a3b8;margin-bottom:20px}
-.btn{display:inline-block;padding:12px 24px;background:#38bdf8;color:#0f172a;
-text-decoration:none;border-radius:6px;font-weight:bold}
-section{padding:60px 0;border-top:1px solid #1e293b}
-h2{margin-bottom:20px;font-size:28px}
-.card{background:#1e293b;padding:20px;border-radius:8px;margin-bottom:20px}
-.skills span{display:inline-block;background:#1e293b;
-padding:8px 14px;border-radius:20px;margin:5px;font-size:14px}
-footer{text-align:center;padding:30px 0;border-top:1px solid #1e293b;
-color:#94a3b8;font-size:14px}
-a{color:#38bdf8;text-decoration:none}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan | Android Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">AM</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-<header class="container">
-<h1>Your Name</h1>
-<p>Android Developer | Kotlin | Java | Clean Architecture</p>
-<a href="#contact" class="btn">Contact Me</a>
-</header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-<section class="container">
-<h2>About Me</h2>
-<p>
-I’m an Android app developer with over two years of experience building high-quality, user-focused applications using Java and Kotlin. I specialize in clean architecture, smooth user experiences, and complete Play Store deployment from development to release.
-</p>
-<p>
-I work closely with clients to ensure every app aligns with their vision and delivers real value. I enjoy transforming ambitious ideas into reliable, scalable applications built with precision and attention to detail.
-</p>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Available for freelance work
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Alex Morgan</span>
+                </h1>
+                <p class="hero-subtitle">Android Developer | Kotlin & Java Specialist</p>
+                <p class="hero-description">
+                    I craft elegant mobile experiences with clean architecture and pixel-perfect design. 
+                    Transforming ideas into scalable Android applications.
+                </p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        Hire on Fiverr
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-coffee"></i>
+                        Buy Me a Coffee
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="container">
-<h2>Projects</h2>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">
+                        I'm a passionate Android developer with 3+ years of experience building 
+                        high-quality mobile applications that users love.
+                    </p>
+                    <p>
+                        My journey in mobile development started with a curiosity about how apps work, 
+                        and it evolved into a career where I get to solve complex problems and create 
+                        intuitive user experiences every day. I specialize in Kotlin and Java, with a 
+                        strong focus on clean architecture, MVVM patterns, and modern Android development practices.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me exploring new technologies, contributing to 
+                        open-source projects, or sharing knowledge with the developer community.
+                    </p>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Badminton Match Tracking App</h3>
-<p>Match setup, scoring system, results sharing using Navigation Components and Kotlin.</p>
-</div>
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <p class="section-subtitle" data-aos="fade-up">Some of my recent work that I'm proud of</p>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=Project+1" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Mobile App</h3>
+                        <p class="project-description">
+                            Full-featured shopping app with payment integration, real-time inventory, 
+                            and personalized recommendations using ML Kit.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Retrofit</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
 
-<div class="card">
-<h3>Zoom Meeting Scheduler</h3>
-<p>Android app integrating Zoom API with Retrofit for scheduling meetings.</p>
-</div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=Project+2" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fitness Tracking App</h3>
+                        <p class="project-description">
+                            Track workouts, monitor progress, and achieve fitness goals with AI-powered 
+                            workout recommendations and social features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Room DB</span>
+                            <span class="tech-tag">Coroutines</span>
+                        </div>
+                    </div>
+                </div>
 
-</section>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=Project+3" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-Time Chat Application</h3>
+                        <p class="project-description">
+                            Secure messaging app with end-to-end encryption, group chats, media sharing, 
+                            and real-time notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Material Design</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="container">
-<h2>Skills</h2>
-<div class="skills">
-<span>Kotlin</span>
-<span>Java</span>
-<span>Android SDK</span>
-<span>MVVM</span>
-<span>Clean Architecture</span>
-<span>Retrofit</span>
-<span>Firebase</span>
-<span>REST APIs</span>
-</div>
-</section>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=Project+4" alt="Project 4">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather Forecast App</h3>
+                        <p class="project-description">
+                            Beautiful weather app with hourly and weekly forecasts, location-based alerts, 
+                            and stunning weather animations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Lottie</span>
+                            <span class="tech-tag">Location Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="container" id="contact">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-<p>GitHub: <a href="#">github.com/yourusername</a></p>
-<p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-code"></i>
+                        Languages & Frameworks
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Jetpack Compose</span>
+                        <span class="skill-tag">XML Layouts</span>
+                        <span class="skill-tag">Coroutines</span>
+                        <span class="skill-tag">RxJava</span>
+                    </div>
+                </div>
 
-<footer>
-© 2026 Your Name. All rights reserved.
-</footer>
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Android Development
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">Clean Architecture</span>
+                        <span class="skill-tag">Retrofit</span>
+                        <span class="skill-tag">Room Database</span>
+                        <span class="skill-tag">Navigation Component</span>
+                        <span class="skill-tag">WorkManager</span>
+                    </div>
+                </div>
 
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-tools"></i>
+                        Tools & Services
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Android Studio</span>
+                        <span class="skill-tag">Gradle</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skills-category learning" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="skills-category-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Currently Learning
+                    </h3>
+                    <div class="skills-list">
+                        <span class="skill-tag learning-tag">Kotlin Multiplatform</span>
+                        <span class="skill-tag learning-tag">GraphQL</span>
+                        <span class="skill-tag learning-tag">Machine Learning</span>
+                        <span class="skill-tag learning-tag">Flutter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="interests-section" data-aos="fade-up">
+                <h3 class="interests-title">Beyond Code</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <i class="fas fa-book"></i>
+                        <span>Tech Blogging</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-camera"></i>
+                        <span>Photography</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-hiking"></i>
+                        <span>Hiking</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-music"></i>
+                        <span>Music</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Let's Work Together</h2>
+            <p class="section-subtitle" data-aos="fade-up">
+                Have a project in mind? Let's create something amazing together.
+            </p>
+
+            <div class="contact-content">
+                <div class="contact-cards">
+                    <a href="mailto:alex.morgan@example.com" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>alex.morgan@example.com</p>
+                    </a>
+
+                    <a href="#" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/alexmorgan</p>
+                    </a>
+
+                    <a href="#" class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>github.com/alexmorgan</p>
+                    </a>
+                </div>
+
+                <div class="contact-links" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#" class="contact-link-btn">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <strong>Hire me on Fiverr</strong>
+                            <span>Professional freelance services</span>
+                        </div>
+                    </a>
+                    <a href="#" class="contact-link-btn">
+                        <i class="fas fa-coffee"></i>
+                        <div>
+                            <strong>Buy Me a Coffee</strong>
+                            <span>Support my work</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Alex Morgan. Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
