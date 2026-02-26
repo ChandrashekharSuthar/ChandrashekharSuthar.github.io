@@ -54,8 +54,9 @@ const maxTrailLength = 20;
 
 // Set canvas size
 function resizeCanvas() {
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
+    const rect = hero.getBoundingClientRect();
+    canvas.width = Math.min(rect.width, window.innerWidth);
+    canvas.height = rect.height;
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
