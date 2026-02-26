@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://chandrashekharSuthar.github.io/sitemap.xml
+Sitemap: https://chandrashekharsuthar.github.io/sitemap.xml
 
 # Disallow specific paths (if any)
 Disallow: /images/

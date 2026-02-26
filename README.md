@@ -16,7 +16,7 @@ A modern, responsive portfolio website for Android developers built with HTML, C
 
 ## 🚀 Live Demo
 
-[View Live Site](https://chandrashekharSuthar.github.io/)
+[View Live Site](https://chandrashekharsuthar.github.io/)
 
 ## 📸 Preview
 
