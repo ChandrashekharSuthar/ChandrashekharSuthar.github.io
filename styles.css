@@ -41,8 +41,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 14, 39, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 14, 39, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -96,12 +97,14 @@ body {
     left: 0;
     right: 0;
     background: rgba(10, 14, 39, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 1rem;
     flex-direction: column;
     gap: 1rem;
     z-index: 999;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-menu.active {
@@ -256,13 +259,16 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    background: rgba(56, 189, 248, 0.15);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
     color: var(--accent);
     margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
 }
 
 .status-dot {
@@ -482,14 +488,17 @@ body {
 }
 
 .stat-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 31, 58, 0.5) 100%);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2.5rem;
-    border-radius: 16px;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.15);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .stat-card::before {
@@ -554,10 +563,14 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(56, 189, 248, 0.05);
-    border-radius: 8px;
+    background: rgba(56, 189, 248, 0.08);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border-radius: 12px;
     border-left: 3px solid var(--accent);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(56, 189, 248, 0.1);
 }
 
 .highlight-item:hover {
@@ -583,11 +596,14 @@ body {
 }
 
 .project-card {
-    background: var(--bg-card);
-    border-radius: 12px;
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
@@ -688,11 +704,14 @@ body {
 }
 
 .skills-category {
-    background: var(--bg-card);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .skills-category:hover {
@@ -771,15 +790,18 @@ body {
 }
 
 .interest-item {
-    background: var(--bg-card);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2rem 1rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .interest-item:hover {
@@ -806,17 +828,20 @@ body {
 }
 
 .contact-card {
-    background: var(--bg-card);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2.5rem 2rem;
-    border-radius: 12px;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s;
     color: var(--text-primary);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .contact-card:hover {
@@ -890,13 +915,16 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background: var(--bg-card);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 1.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .contact-link-btn:hover {
