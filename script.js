@@ -6,6 +6,44 @@ AOS.init({
     offset: 100
 });
 
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to 'dark'
+const currentTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    
+    // Update navbar background based on scroll position and theme
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+        nav.style.background = newTheme === 'dark' ? 'rgba(10, 14, 39, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+    } else {
+        nav.style.background = newTheme === 'dark' ? 'rgba(10, 14, 39, 0.7)' : 'rgba(255, 255, 255, 0.7)';
+    }
+});
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+}
+
+
 // Cursor Trail Effect in Hero Section
 const hero = document.querySelector('.hero');
 const canvas = document.getElementById('particleCanvas');
@@ -291,10 +329,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar background on scroll
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
+    const currentTheme = html.getAttribute('data-theme');
     if (window.scrollY > 100) {
-        nav.style.background = 'rgba(10, 14, 39, 0.95)';
+        if (currentTheme === 'dark') {
+            nav.style.background = 'rgba(10, 14, 39, 0.95)';
+        } else {
+            nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
     } else {
-        nav.style.background = 'rgba(10, 14, 39, 0.8)';
+        if (currentTheme === 'dark') {
+            nav.style.background = 'rgba(10, 14, 39, 0.7)';
+        } else {
+            nav.style.background = 'rgba(255, 255, 255, 0.7)';
+        }
     }
 });
 
