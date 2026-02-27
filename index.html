@@ -174,7 +174,7 @@
                 </div>
                 <div class="about-stats" data-aos="fade-left">
                     <div class="stat-card">
-                        <div class="stat-number">25+</div>
+                        <div class="stat-number">10+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
                     <div class="stat-card">
@@ -184,6 +184,28 @@
                     <div class="stat-card">
                         <div class="stat-number">3+</div>
                         <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="education-compact" data-aos="fade-up">
+                <h3 class="education-compact-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </h3>
+                <div class="education-compact-list">
+                    <div class="education-compact-item">
+                        <strong>MSc Computer Science</strong>
+                        <span>Currently Pursuing (Final Semester)</span>
+                    </div>
+                    <div class="education-compact-item">
+                        <strong>BSc Computer Science</strong>
+                        <span>Completed</span>
+                    </div>
+                    <div class="education-compact-item">
+                        <strong>Secondary Education (CBSE)</strong>
+                        <span>Completed</span>
                     </div>
                 </div>
             </div>
@@ -474,8 +496,38 @@
             </p>
 
             <div class="contact-content">
-                <div class="contact-cards">
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-aos="fade-up">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Cards -->
+                <div class="contact-cards" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -486,7 +538,7 @@
                         </button>
                     </div>
 
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fab fa-linkedin"></i>
                         </div>
@@ -497,7 +549,7 @@
                         </a>
                     </div>
 
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fab fa-github"></i>
                         </div>
@@ -509,7 +561,8 @@
                     </div>
                 </div>
 
-                <div class="contact-links" data-aos="fade-up" data-aos-delay="400">
+                <!-- Contact Links -->
+                <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
                     <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="contact-link-btn">
                         <i class="fas fa-briefcase"></i>
                         <div>

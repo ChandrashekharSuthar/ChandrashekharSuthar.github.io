@@ -459,6 +459,60 @@ function animateCircles() {
 console.log('Portfolio loaded successfully! 🚀');
 
 
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual backend endpoint)
+        try {
+            // For now, we'll use a mailto link as fallback
+            const mailtoLink = `mailto:shekharsuthar1030@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            
+            // Open mailto link
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Your default email client should open. If not, please email me directly at shekharsuthar1030@gmail.com';
+            
+            // Reset form
+            contactForm.reset();
+            
+        } catch (error) {
+            // Show error message
+            formStatus.className = 'form-status error';
+            formStatus.textContent = 'Something went wrong. Please email me directly at shekharsuthar1030@gmail.com';
+        } finally {
+            // Restore button
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Hide status message after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }
+    });
+}
+
+
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTop');
 

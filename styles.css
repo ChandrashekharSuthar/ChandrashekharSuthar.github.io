@@ -972,6 +972,75 @@ button:focus:not(:focus-visible) {
     text-align: center;
 }
 
+/* Education Compact (in About Section) */
+.education-compact {
+    margin-top: 4rem;
+}
+
+.education-compact-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.education-compact-title i {
+    color: var(--accent);
+}
+
+.education-compact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.education-compact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2rem 1.5rem;
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .education-compact-item {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.education-compact-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.education-compact-item strong {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.education-compact-item span {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Interests */
+.interests-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
 .interests-title {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -1016,17 +1085,112 @@ button:focus:not(:focus-visible) {
 
 /* Contact Section */
 .contact-content {
-    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.contact-form-wrapper {
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.9rem 1.2rem;
+    background: rgba(10, 14, 39, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: rgba(248, 250, 252, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-status {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem;
 }
 
+/* Contact Section */
 .contact-card {
     background: rgba(26, 31, 58, 0.6);
     backdrop-filter: blur(20px) saturate(180%);
@@ -1329,6 +1493,14 @@ button:focus:not(:focus-visible) {
         font-size: 1.2rem;
     }
     
+    .education-compact-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-compact-item {
+        padding: 1.5rem 1.2rem;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -1343,6 +1515,18 @@ button:focus:not(:focus-visible) {
     
     .contact-cards {
         grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        gap: 2rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 2rem 1.5rem;
     }
     
     .contact-link-btn {
