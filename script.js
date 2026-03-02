@@ -483,14 +483,14 @@ if (contactForm) {
         // Simulate form submission (replace with actual backend endpoint)
         try {
             // For now, we'll use a mailto link as fallback
-            const mailtoLink = `mailto:shekharsuthar1030@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            const mailtoLink = `mailto:chandrashekharsuthar.work@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
             
             // Open mailto link
             window.location.href = mailtoLink;
             
             // Show success message
             formStatus.className = 'form-status success';
-            formStatus.textContent = 'Your default email client should open. If not, please email me directly at shekharsuthar1030@gmail.com';
+            formStatus.textContent = 'Your default email client should open. If not, please email me directly at chandrashekharsuthar.work@gmail.com';
             
             // Reset form
             contactForm.reset();
@@ -498,7 +498,7 @@ if (contactForm) {
         } catch (error) {
             // Show error message
             formStatus.className = 'form-status error';
-            formStatus.textContent = 'Something went wrong. Please email me directly at shekharsuthar1030@gmail.com';
+            formStatus.textContent = 'Something went wrong. Please email me directly at chandrashekharsuthar.work@gmail.com';
         } finally {
             // Restore button
             submitBtn.innerHTML = originalBtnText;

@@ -1,4 +1,4 @@
-Contact: mailto:shekharsuthar1030@gmail.com
+Contact: mailto:chandrashekharsuthar.work@gmail.com
 Preferred-Languages: en
 Canonical: https://chandrashekharsuthar.github.io/.well-known/security.txt
 Policy: https://chandrashekharsuthar.github.io/

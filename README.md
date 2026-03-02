@@ -119,7 +119,7 @@ Example: "Portfolio template by Chandra Shekhar Suthar"
 ## 📞 Contact
 
 **Chandra Shekhar Suthar**
-- Email: shekharsuthar1030@gmail.com
+- Email: chandrashekharsuthar.work@gmail.com
 - GitHub: [@ChandrashekharSuthar](https://github.com/ChandrashekharSuthar)
 - LinkedIn: [Chandra Shekhar Suthar](https://www.linkedin.com/in/chandra-shekhar-suthar-345042272/)
 - Fiverr: [shekharsuthar07](https://www.fiverr.com/shekharsuthar07)
