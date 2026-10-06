@@ -47,90 +47,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=6">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://chandrashekharsuthar.github.io/">
 </head>
 <body>
+
     <!-- Skip to main content link for screen readers -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#" class="logo">Chandra Shekhar Suthar</a>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
+    
 
-    <!-- Hero Section -->
-    <section class="hero" id="main-content" role="main" aria-label="Introduction">
-        <canvas id="particleCanvas" aria-hidden="true"></canvas>
+    <!-- App-Style Profile Hero -->
+    <section class="hero app-profile-hero" id="main-content" role="main" aria-label="Introduction">
         <div class="container">
-            <div class="hero-layout">
-                <div class="hero-content" data-aos="fade-up">
+            <div class="profile-header" data-aos="fade-up">
+                <div class="profile-pic-container">
+                    <img src="images/profile_pic.jpeg" alt="Chandra Shekhar Suthar" class="profile-avatar">
+                </div>
+                <div class="profile-info">
                     <div class="hero-badge">
-                        <span class="status-dot"></span>
-                        Available for freelance work
+                        <span class="status-dot"></span> Available for freelance work
                     </div>
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="gradient-text">Chandra Shekhar Suthar</span>
-                    </h1>
-                    <p class="hero-subtitle">Android Developer | Kotlin & Java Specialist</p>
-                    <p class="hero-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Udaipur, Rajasthan, India
+                    <h1 class="profile-name">Chandra Shekhar Suthar</h1>
+                    <p class="profile-title">Android Developer | Kotlin & Java</p>
+                    <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Udaipur, RJ, India</p>
+                    
+                    <div class="profile-quick-stats">
+                        <div class="quick-stat"><strong>3+</strong><span>Years Exp</span></div>
+                        <div class="quick-stat"><strong>10+</strong><span>Projects</span></div>
+                        <div class="quick-stat"><strong>15+</strong><span>Clients</span></div>
+                    </div>
+                    
+                    <p class="profile-bio">
+                        Crafting elegant mobile experiences with clean architecture. Transforming ideas into scalable native Android applications.
                     </p>
-                    <p class="hero-description">
-                        I craft elegant mobile experiences with clean architecture and pixel-perfect design. 
-                        Transforming ideas into scalable Android applications.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="btn btn-primary">
-                            <i class="fas fa-briefcase"></i>
-                            Hire on Fiverr
-                        </a>
-                        <a href="https://www.buymeacoffee.com/ChandrashekharSuthar" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-coffee"></i>
-                            Buy Me a Coffee
-                        </a>
-                    </div>
-                    <div class="hero-socials" role="list" aria-label="Social media links">
-                        <a href="https://github.com/ChandrashekharSuthar" class="social-link" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/chandrashekharsuthar" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="mailto:chandrashekharsuthar.work@gmail.com" class="social-link" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image" data-aos="fade-left">
-                    <div class="profile-pic-wrapper">
-                        <img src="images/profile_pic.jpeg" alt="Chandra Shekhar Suthar" class="profile-pic">
-                        <div class="profile-pic-border"></div>
+                    
+                    <div class="profile-actions">
+                        <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="btn btn-primary btn-full"><i class="fas fa-briefcase"></i> Hire Me via Fiverr</a>
+                        <div class="profile-socials">
+                            <a href="https://github.com/ChandrashekharSuthar" class="social-link" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                            <a href="https://x.com/sorrychandra" target="_blank" class="social-link" aria-label="X (Twitter) profile"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/chandrashekharsuthar" class="social-link" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="mailto:chandrashekharsuthar.work@gmail.com" class="social-link" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,7 +105,9 @@
     <!-- About Section -->
     <section id="about" class="section" role="region" aria-labelledby="about-heading">
         <div class="container">
-            <h2 id="about-heading" class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="section-header">
+                <h2 id="about-heading" class="section-title" data-aos="fade-up">About Me</h2>
+            </div>
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
                     <p class="lead">
@@ -209,14 +176,43 @@
                     </div>
                 </div>
             </div>
+            <!-- Interests -->
+            <div class="interests-section" data-aos="fade-up">
+                <h3 class="interests-title">Beyond Code</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <i class="fas fa-book"></i>
+                        <span>Tech Blogging</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-camera"></i>
+                        <span>Photography</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-futbol"></i>
+                        <span>Sports</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section section-alt" role="region" aria-labelledby="projects-heading">
         <div class="container">
-            <h2 id="projects-heading" class="section-title" data-aos="fade-up">Featured Projects</h2>
-            <p class="section-subtitle" data-aos="fade-up">Some of my recent work that I'm proud of</p>
+            <div class="section-header">
+                <h2 id="projects-heading" class="section-title" data-aos="fade-up">Featured Projects</h2>
+                <p class="section-subtitle" data-aos="fade-up">Some of my recent work that I'm proud of</p>
+            </div>
             
             <div class="projects-grid">
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
@@ -436,114 +432,35 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section" role="region" aria-labelledby="skills-heading">
+
+    <!-- Services Section -->
+    <section id="services" class="section" role="region" aria-labelledby="services-heading">
         <div class="container">
-            <h2 id="skills-heading" class="section-title" data-aos="fade-up">Skills & Technologies</h2>
-            
-            <div class="skills-container">
-                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="skills-category-title">
-                        <i class="fas fa-code"></i>
-                        Languages & Frameworks
-                    </h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Swift</span>
-                        <span class="skill-tag">Dart</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">Jetpack Compose</span>
-                        <span class="skill-tag">XML Layouts</span>
-                        <span class="skill-tag">Coroutines</span>
-                        <span class="skill-tag">RxJava</span>
-                    </div>
-                </div>
-
-                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="skills-category-title">
-                        <i class="fas fa-mobile-alt"></i>
-                        Android Development
-                    </h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">MVVM</span>
-                        <span class="skill-tag">Clean Architecture</span>
-                        <span class="skill-tag">Retrofit</span>
-                        <span class="skill-tag">Room Database</span>
-                        <span class="skill-tag">Navigation Component</span>
-                        <span class="skill-tag">WorkManager</span>
-                    </div>
-                </div>
-
-                <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="skills-category-title">
-                        <i class="fas fa-tools"></i>
-                        Tools & Services
-                    </h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Android Studio</span>
-                        <span class="skill-tag">Xcode</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Cursor</span>
-                        <span class="skill-tag">Kiro</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Gradle</span>
-                        <span class="skill-tag">phpMyAdmin</span>
-                        <span class="skill-tag">Antigravity</span>
-                        <span class="skill-tag">Claude</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">CI/CD</span>
-                    </div>
-                </div>
-
-                <div class="skills-category learning" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="skills-category-title">
-                        <i class="fas fa-graduation-cap"></i>
-                        Currently Learning
-                    </h3>
-                    <div class="skills-list">
-                        <span class="skill-tag learning-tag">Kotlin Multiplatform</span>
-                        <span class="skill-tag learning-tag">GraphQL</span>
-                        <span class="skill-tag learning-tag">Machine Learning</span>
-                        <span class="skill-tag learning-tag">Flutter</span>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2 id="services-heading" class="section-title" data-aos="fade-up">Services</h2>
+                <p class="section-subtitle" data-aos="fade-up">What I can build for you</p>
             </div>
-
-            <!-- Interests -->
-            <div class="interests-section" data-aos="fade-up">
-                <h3 class="interests-title">Beyond Code</h3>
-                <div class="interests-grid">
-                    <div class="interest-item">
-                        <i class="fas fa-book"></i>
-                        <span>Tech Blogging</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Open Source</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-camera"></i>
-                        <span>Photography</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Gaming</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>Sports</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-music"></i>
-                        <span>Music</span>
-                    </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <h3>Android Development</h3>
+                    <p>Native Android applications built with Kotlin and Jetpack Compose, focusing on performance and modern UI/UX.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3>Web Development</h3>
+                    <p>Responsive, mobile-first websites and web applications using modern web technologies and frameworks.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-server service-icon"></i>
+                    <h3>API Integration</h3>
+                    <p>Robust backend integration, RESTful APIs, and cloud services (Firebase, AWS) to power your applications.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-paint-brush service-icon"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive interfaces following Material Design guidelines for a perfect user experience.</p>
                 </div>
             </div>
         </div>
@@ -552,10 +469,12 @@
     <!-- Contact Section -->
     <section id="contact" class="section section-alt" role="region" aria-labelledby="contact-heading">
         <div class="container">
-            <h2 id="contact-heading" class="section-title" data-aos="fade-up">Let's Work Together</h2>
-            <p class="section-subtitle" data-aos="fade-up">
+            <div class="section-header">
+                <h2 id="contact-heading" class="section-title" data-aos="fade-up">Let's Work Together</h2>
+                <p class="section-subtitle" data-aos="fade-up">
                 Have a project in mind? Let's create something amazing together.
             </p>
+            </div>
 
             <div class="contact-content">
                 <!-- Contact Form -->
@@ -595,9 +514,9 @@
                         </div>
                         <h3>Email</h3>
                         <p class="contact-value">chandrashekharsuthar.work@gmail.com</p>
-                        <button class="copy-btn" onclick="copyToClipboard('chandrashekharsuthar.work@gmail.com', this)">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
+                        <a href="mailto:chandrashekharsuthar.work@gmail.com" class="visit-btn">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </a>
                     </div>
 
                     <div class="contact-card">
@@ -621,6 +540,16 @@
                             <i class="fas fa-external-link-alt"></i> Visit
                         </a>
                     </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </div>
+                        <h3>X (Twitter)</h3>
+                        <p class="contact-value">@sorrychandra</p>
+                        <a href="https://x.com/sorrychandra" target="_blank" class="visit-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Contact Links -->
@@ -628,15 +557,8 @@
                     <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="contact-link-btn">
                         <i class="fas fa-briefcase"></i>
                         <div>
-                            <strong>Hire me on Fiverr.com</strong>
-                            <span>Professional freelance services</span>
-                        </div>
-                    </a>
-                    <a href="https://www.freelancer.com/u/shekHarSuTHar" target="_blank" class="contact-link-btn">
-                        <i class="fas fa-laptop-code"></i>
-                        <div>
-                            <strong>Work with me on Freelancer.com</strong>
-                            <span>Available for freelance projects</span>
+                            <strong>Work with me on Fiverr.com</strong>
+                            <span>Explore my portfolio of past projects</span>
                         </div>
                     </a>
                     <a href="https://www.buymeacoffee.com/ChandrashekharSuthar" target="_blank" class="contact-link-btn">
@@ -658,13 +580,14 @@
                 <p>&copy; 2026 Chandra Shekhar Suthar • Udaipur, Rajasthan, India • Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
                 <div class="footer-socials" role="list" aria-label="Footer social media links">
                     <a href="https://github.com/ChandrashekharSuthar" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://x.com/sorrychandra" target="_blank" aria-label="X (Twitter) profile"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
                     <a href="https://www.linkedin.com/in/chandrashekharsuthar" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                     <a href="mailto:chandrashekharsuthar.work@gmail.com" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 </div>
             </div>
             <!-- Open Source Notice -->
             <div style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
-                <p>Open source template • Replace personal info with yours • <a href="LICENSE" style="color: var(--accent); text-decoration: none;">View License</a></p>
+                
             </div>
         </div>
     </footer>
@@ -674,7 +597,31 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    
+    
+
+    <!-- Bottom Navigation Bar (Mobile Only) -->
+    <nav class="bottom-nav">
+        <a href="#main-content" class="bottom-nav-item active">
+            <i class="fas fa-user-circle"></i>
+            <span>Profile</span>
+        </a>
+        <a href="#projects" class="bottom-nav-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Work</span>
+        </a>
+        <a href="#services" class="bottom-nav-item">
+            <i class="fas fa-rocket"></i>
+            <span>Services</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="script.js"></script>
     
     <!-- Prevent console tampering -->
