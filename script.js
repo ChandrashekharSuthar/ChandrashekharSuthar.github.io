@@ -168,7 +168,7 @@ function initMobileFragments() {
     if (window.innerWidth <= 768) {
         document.getElementById('main-content').classList.add('active-fragment');
         document.getElementById('about').classList.add('active-fragment');
-        document.querySelector('.footer').classList.add('active-fragment');
+        // Footer is ONLY shown on Contact tab
     }
 
     bottomNavItems.forEach(item => {
@@ -194,8 +194,10 @@ function initMobileFragments() {
                     });
                 }
                 
-                // Always show footer
-                document.querySelector('.footer').classList.add('active-fragment');
+                // Show footer ONLY on contact tab
+                if (targetHref === '#contact') {
+                    document.querySelector('.footer').classList.add('active-fragment');
+                }
                 
                 // Scroll to top of fragment
                 window.scrollTo(0, 0);
@@ -220,7 +222,10 @@ function initMobileFragments() {
                         if (el) el.classList.add('active-fragment');
                     });
                 }
-                document.querySelector('.footer').classList.add('active-fragment');
+                
+                if (targetHref === '#contact') {
+                    document.querySelector('.footer').classList.add('active-fragment');
+                }
             }
         }
     });
@@ -232,3 +237,85 @@ document.addEventListener('DOMContentLoaded', initMobileFragments);
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     initMobileFragments();
 }
+
+// Number Counter Animation
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // lower is slower
+    
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const targetNum = +target.getAttribute('data-target');
+                const suffix = target.getAttribute('data-suffix') || '';
+                
+                const updateCount = () => {
+                    // Quick stats might have inner text without tags, or might just have text.
+                    // The text content might be "0+" initially. We just parse the number.
+                    const currentString = target.innerText.replace(suffix, '');
+                    const count = +currentString;
+                    const inc = targetNum / speed;
+                    
+                    if (count < targetNum) {
+                        target.innerText = Math.ceil(count + inc) + suffix;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        target.innerText = targetNum + suffix;
+                    }
+                };
+                
+                updateCount();
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initCounters();
+} else {
+    document.addEventListener('DOMContentLoaded', initCounters);
+}
+
+// Handle Extended FAB click in Services
+window.handleServiceToContactClick = function(e) {
+    e.preventDefault();
+    
+    if (window.innerWidth <= 768) {
+        // Mobile: Switch fragments to Contact
+        const contactNav = document.querySelector('.bottom-nav-item[href="#contact"]');
+        if (contactNav) {
+            // Remove active classes
+            document.querySelectorAll('.bottom-nav-item').forEach(nav => nav.classList.remove('active'));
+            document.querySelectorAll('.active-fragment').forEach(el => el.classList.remove('active-fragment'));
+            
+            // Add active to contact nav
+            contactNav.classList.add('active');
+            
+            // Activate contact fragment
+            const el = document.getElementById('contact');
+            if (el) el.classList.add('active-fragment');
+            
+            // Show footer
+            document.querySelector('.footer').classList.add('active-fragment');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    } else {
+        // Desktop: Smooth scroll to contact section
+        const target = document.getElementById('contact');
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+};

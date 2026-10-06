@@ -603,52 +603,34 @@ button:focus:not(:focus-visible) {
 }
 
 .about-stats {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 1.5rem;
+    padding: 2rem 0;
 }
 
 .stat-card {
-    border: 1px solid var(--outline-variant);
-    background: var(--bg-card);
-        padding: 2.5rem;
-    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    border: 1px solid rgba(0, 230, 118, 0.15);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    box-shadow: none;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
-[data-theme="light"] .stat-card {
-    border: 1px solid var(--outline-variant);
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: none;
-}
 
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.1), transparent);
-    transition: left 0.6s;
-}
 
-.stat-card:hover::before {
-    left: 100%;
-}
 
-.stat-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0, 230, 118, 0.2);
-}
+
+
+
+
 
 .stat-number {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     background: var(--gradient-alt);
     -webkit-background-clip: text;
@@ -704,7 +686,6 @@ button:focus:not(:focus-visible) {
 
 .highlight-item:hover {
     background: rgba(0, 230, 118, 0.1);
-    transform: translateX(10px);
 }
 
 .highlight-item i {
@@ -753,9 +734,7 @@ button:focus:not(:focus-visible) {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
     border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .project-image {
@@ -878,7 +857,6 @@ button:focus:not(:focus-visible) {
 
 .skills-category:hover {
     border-color: var(--accent);
-    transform: translateY(-5px);
 }
 
 .skills-category.learning {
@@ -950,9 +928,8 @@ button:focus:not(:focus-visible) {
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
-    color: var(--text-primary);
 }
 
 .education-compact-title i {
@@ -960,34 +937,37 @@ button:focus:not(:focus-visible) {
 }
 
 .education-compact-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--outline-variant);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+[data-theme="light"] .education-compact-list {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .education-compact-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding: 2rem 1.5rem;
-    background: var(--bg-card);
-        border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--outline-variant);
+    transition: background-color 0.3s;
 }
 
-[data-theme="light"] .education-compact-item {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+.education-compact-item:last-child {
+    border-bottom: none;
 }
 
 .education-compact-item:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
+    background: rgba(0, 230, 118, 0.05);
 }
 
 .education-compact-item strong {
@@ -1008,8 +988,16 @@ button:focus:not(:focus-visible) {
 }
 
 .interests-title {
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
+}
+
+.interests-title i {
+    color: var(--accent);
 }
 
 .interests-grid {
@@ -1039,7 +1027,6 @@ button:focus:not(:focus-visible) {
 
 .interest-item:hover {
     border-color: var(--accent);
-    transform: translateY(-5px);
 }
 
 .interest-item i {
@@ -1178,7 +1165,6 @@ button:focus:not(:focus-visible) {
 
 .contact-card:hover {
     border-color: var(--accent);
-    transform: translateY(-5px);
 }
 
 .contact-icon {
@@ -1268,7 +1254,6 @@ button:focus:not(:focus-visible) {
 
 .contact-link-btn:hover {
     border-color: var(--accent);
-    transform: translateX(10px);
 }
 
 .contact-link-btn i {
@@ -1461,8 +1446,11 @@ button:focus:not(:focus-visible) {
         font-size: 1.2rem;
     }
     
-    .education-compact-list {
-        grid-template-columns: 1fr;
+    .education-compact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 0.5rem;
     }
     
     .education-compact-item {
@@ -1613,13 +1601,10 @@ button:focus:not(:focus-visible) {
         gap: 0.8rem;
     }
     
-    .stat-card {
-    border: 1px solid var(--outline-variant);
-        padding: 1.5rem 1rem;
-    }
+    
     
     .stat-number {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
     .stat-label {
@@ -1827,7 +1812,7 @@ button:focus:not(:focus-visible) {
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
     
     .project-title {
@@ -1933,9 +1918,11 @@ button:focus:not(:focus-visible) {
 .profile-actions {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     width: 100%;
     max-width: 400px;
+    margin: 0 auto;
 }
 
 .btn-full {
@@ -2222,7 +2209,6 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
     border-color: var(--accent);
 }
 
@@ -2456,16 +2442,67 @@ body {
 }
 
 @media (max-width: 768px) {
-    .interests-title {
-        text-align: left !important;
-        font-size: 24px !important;
-        margin-bottom: 20px !important;
-    }
-}
-@media (max-width: 768px) {
-    .interests-section {
-        text-align: left !important;
+    .interests-title, .education-compact-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 }
 
 
+
+
+/* Extended FAB in Services */
+.services-cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.btn-extended-fab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 100px; /* Fully rounded pill shape */
+    background: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 16px rgba(0, 230, 118, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-extended-fab:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 8px 24px rgba(0, 230, 118, 0.3);
+}
+
+.btn-extended-fab:active {
+    transform: scale(0.96);
+}
+
+.btn-extended-fab i {
+    font-size: 1.2rem;
+}
+
+/* Fix for webkit autofill styling */
+.form-group input:-webkit-autofill,
+.form-group textarea:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-primary);
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-card) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+[data-theme="light"] .form-group input:-webkit-autofill,
+[data-theme="light"] .form-group textarea:-webkit-autofill,
+[data-theme="light"] .form-group input:-webkit-autofill:hover,
+[data-theme="light"] .form-group input:-webkit-autofill:focus,
+[data-theme="light"] .form-group textarea:-webkit-autofill:hover,
+[data-theme="light"] .form-group textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+}

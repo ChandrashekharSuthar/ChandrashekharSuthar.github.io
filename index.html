@@ -49,7 +49,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=21">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://chandrashekharsuthar.github.io/">
@@ -79,9 +79,9 @@
                     <p class="profile-location"><i class="fas fa-map-marker-alt"></i> Udaipur, RJ, India</p>
                     
                     <div class="profile-quick-stats">
-                        <div class="quick-stat"><strong>3+</strong><span>Years Exp</span></div>
-                        <div class="quick-stat"><strong>10+</strong><span>Projects</span></div>
-                        <div class="quick-stat"><strong>15+</strong><span>Clients</span></div>
+                        <div class="quick-stat"><strong class="counter" data-target="3" data-suffix="+">0+</strong><span>Years Exp</span></div>
+                        <div class="quick-stat"><strong class="counter" data-target="10" data-suffix="+">0+</strong><span>Projects</span></div>
+                        <div class="quick-stat"><strong class="counter" data-target="15" data-suffix="+">0+</strong><span>Clients</span></div>
                     </div>
                     
                     <p class="profile-bio">
@@ -141,15 +141,15 @@
                 </div>
                 <div class="about-stats" data-aos="fade-left">
                     <div class="stat-card">
-                        <div class="stat-number">10+</div>
+                        <div class="stat-number counter" data-target="10" data-suffix="+">0+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">15+</div>
+                        <div class="stat-number counter" data-target="15" data-suffix="+">0+</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">3+</div>
+                        <div class="stat-number counter" data-target="3" data-suffix="+">0+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                 </div>
@@ -157,10 +157,7 @@
 
             <!-- Education -->
             <div class="education-compact" data-aos="fade-up">
-                <h3 class="education-compact-title">
-                    <i class="fas fa-graduation-cap"></i>
-                    Education
-                </h3>
+                <h3 class="education-compact-title"><i class="fas fa-graduation-cap"></i> Education</h3>
                 <div class="education-compact-list">
                     <div class="education-compact-item">
                         <strong>MSc Computer Science</strong>
@@ -178,7 +175,7 @@
             </div>
             <!-- Interests -->
             <div class="interests-section" data-aos="fade-up">
-                <h3 class="interests-title">Beyond Code</h3>
+                <h3 class="interests-title"><i class="fas fa-rocket"></i> Beyond Code</h3>
                 <div class="interests-grid">
                     <div class="interest-item">
                         <i class="fas fa-book"></i>
@@ -187,10 +184,6 @@
                     <div class="interest-item">
                         <i class="fas fa-code-branch"></i>
                         <span>Open Source</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-camera"></i>
-                        <span>Photography</span>
                     </div>
                     <div class="interest-item">
                         <i class="fas fa-gamepad"></i>
@@ -441,27 +434,43 @@
                 <p class="section-subtitle" data-aos="fade-up">What I can build for you</p>
             </div>
             
-            <div class="services-grid">
+                        <div class="services-grid">
                 <div class="service-card" data-aos="fade-up">
                     <i class="fas fa-mobile-alt service-icon"></i>
                     <h3>Android Development</h3>
                     <p>Native Android applications built with Kotlin and Jetpack Compose, focusing on performance and modern UI/UX.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-layer-group service-icon"></i>
+                    <h3>Flutter Development</h3>
+                    <p>Cross-platform mobile applications for iOS and Android using Flutter and Dart, delivering native performance from a single codebase.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-laptop-code service-icon"></i>
                     <h3>Web Development</h3>
                     <p>Responsive, mobile-first websites and web applications using modern web technologies and frameworks.</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-server service-icon"></i>
                     <h3>API Integration</h3>
                     <p>Robust backend integration, RESTful APIs, and cloud services (Firebase, AWS) to power your applications.</p>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-bug service-icon"></i>
+                    <h3>Maintenance & Features</h3>
+                    <p>Reliable bug fixing, seamless new feature integration, legacy code refactoring, and ongoing application maintenance.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <i class="fas fa-paint-brush service-icon"></i>
                     <h3>UI/UX Design</h3>
                     <p>Beautiful, intuitive interfaces following Material Design guidelines for a perfect user experience.</p>
                 </div>
+            </div>
+        
+            <div class="services-cta-container" data-aos="zoom-in" data-aos-delay="600">
+                <a href="#contact" class="btn btn-primary btn-extended-fab" onclick="handleServiceToContactClick(event)">
+                    <i class="fas fa-paper-plane"></i> Request a Quote
+                </a>
             </div>
         </div>
     </section>
@@ -622,7 +631,7 @@
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
     
     <!-- Prevent console tampering -->
     <script>
