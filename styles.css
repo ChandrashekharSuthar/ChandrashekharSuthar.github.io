@@ -2082,33 +2082,60 @@ button:focus:not(:focus-visible) {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--bg-card);
-    border-top: 1px solid rgba(255,255,255,0.05);
-    justify-content: center;
-    gap: 2rem;
-    padding: 0.8rem 1rem;
-    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+    width: 100%;
+    max-width: 100vw;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-top: 1px solid var(--outline-variant);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.45rem 0.25rem;
+    padding-bottom: calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    gap: 0;
     z-index: 1000;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: none;
 }
 
 .bottom-nav-item {
+    flex: 1 1 0px;
+    min-width: 0;
+    max-width: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    gap: 0.3rem;
-    transition: color 0.2s;
-    min-width: 80px;
+    padding: 0.2rem 0;
+    gap: 0.2rem;
+    box-sizing: border-box;
+    transition: color 0.2s ease;
 }
 
 .bottom-nav-item i {
-    font-size: 1.5rem;
-    padding: 0.4rem 1.2rem;
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 28px;
     border-radius: 100px;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.bottom-nav-item span {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    white-space: nowrap;
+    color: inherit;
+    transition: color 0.2s ease;
 }
 
 .bottom-nav-item.active {
@@ -2120,8 +2147,13 @@ button:focus:not(:focus-visible) {
     color: var(--accent);
 }
 
+.bottom-nav-item.active span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 body {
-    padding-bottom: 80px;
+    padding-bottom: calc(65px + env(safe-area-inset-bottom, 0px));
 }
 
 
@@ -2129,47 +2161,76 @@ body {
     /* Hide desktop nav elements on mobile entirely */
     .nav { display: none !important; }
     
-    /* Show Bottom Nav */
+    /* Show Bottom Nav on Mobile */
     .bottom-nav {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: var(--bg-card);
-        border-top: 1px solid rgba(255,255,255,0.05);
-        justify-content: space-around;
-        padding: 0.8rem 0.5rem;
-        padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px)); /* Support for iOS home bar */
-        z-index: 1000;
-        box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        background: var(--bg-secondary) !important;
+        border-top: 1px solid var(--outline-variant) !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        padding: 0.45rem 0.25rem !important;
+        padding-bottom: calc(0.45rem + env(safe-area-inset-bottom, 0px)) !important;
+        gap: 0 !important;
+        z-index: 1000 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
     }
     
     .bottom-nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: var(--text-secondary);
-        font-size: 0.75rem;
-        gap: 0.3rem;
-        transition: color 0.2s;
+        flex: 1 1 0px !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+        color: var(--text-secondary) !important;
+        padding: 0.2rem 0 !important;
+        gap: 0.2rem !important;
+        box-sizing: border-box !important;
+        transition: color 0.2s ease !important;
     }
     
     .bottom-nav-item i {
-        font-size: 1.3rem;
-        padding: 0.4rem 1.2rem;
-        border-radius: 100px;
-        transition: all 0.2s;
+        font-size: 1.15rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 48px !important;
+        height: 28px !important;
+        border-radius: 100px !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .bottom-nav-item span {
+        font-size: 0.72rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.01em !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        color: inherit !important;
     }
     
     .bottom-nav-item.active {
-        color: var(--text-primary);
+        color: var(--text-primary) !important;
     }
     
     .bottom-nav-item.active i {
-        background: rgba(0, 230, 118, 0.2);
-        color: var(--accent);
+        background: rgba(156, 214, 125, 0.2) !important;
+        color: var(--accent) !important;
+    }
+
+    .bottom-nav-item.active span {
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
     }
     
     /* Make body accommodate bottom nav */
@@ -2256,16 +2317,6 @@ body {
     font-size: 14px !important;
     letter-spacing: 0.1px;
     font-weight: 500;
-}
-.bottom-nav {
-    background: var(--bg-secondary) !important;
-    border-top: 1px solid var(--outline-variant) !important;
-}
-
-/* M3 specific tweaks */
-.bottom-nav-item.active i {
-    background: rgba(156, 214, 125, 0.2) !important; /* using --accent in rgba */
-    color: var(--accent) !important;
 }
 
 .profile-avatar {
