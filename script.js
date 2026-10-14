@@ -53,7 +53,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Add active state to nav links based on scroll position
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.bottom-nav-item');
+const navLinks = document.querySelectorAll('.bottom-nav-item, .desktop-nav-link');
 
 window.addEventListener('scroll', () => {
     if (window.innerWidth <= 768) return; // Disable scroll spy on mobile fragments
@@ -61,15 +61,22 @@ window.addEventListener('scroll', () => {
     let current = 'main-content'; // Default to top
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
+        if (window.scrollY >= (sectionTop - 220)) {
             current = section.getAttribute('id');
         }
     });
 
+    // If near the bottom of the page, set contact as active
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100)) {
+        current = 'contact';
+    }
+
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        const href = link.getAttribute('href');
+        const isMatch = (href === '#main-content' && (current === 'main-content' || current === 'about')) ||
+                        (href === '#' + current && current !== 'main-content' && current !== 'about');
+        if (isMatch) {
             link.classList.add('active');
         }
     });

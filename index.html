@@ -49,12 +49,26 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=34">
+    <link rel="stylesheet" href="styles.css?v=59">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://chandrashekharsuthar.github.io/">
 </head>
 <body>
+
+    <!-- Top Navigation Bar (Desktop Only) -->
+    <nav class="nav" role="navigation" aria-label="Main Navigation">
+        <div class="container nav-content">
+            <a href="#main-content" class="logo">Chandra Shekhar Suthar</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#main-content" class="desktop-nav-link active">Profile</a>
+                <a href="#projects" class="desktop-nav-link">Work</a>
+                <a href="#services" class="desktop-nav-link">Services</a>
+                <a href="#contact" class="desktop-nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- Skip to main content link for screen readers -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -134,59 +148,44 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-stats" data-aos="fade-left">
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="10" data-suffix="+">0+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="15" data-suffix="+">0+</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number counter" data-target="3" data-suffix="+">0+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
             </div>
 
-            <!-- Education -->
-            <div class="education-compact" data-aos="fade-up">
-                <h3 class="education-compact-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-                <div class="education-compact-list">
-                    <div class="education-compact-item">
-                        <strong>MSc Computer Science</strong>
-                        <span>Currently Pursuing (Final Semester)</span>
-                    </div>
-                    <div class="education-compact-item">
-                        <strong>BSc Computer Science</strong>
-                        <span>Completed</span>
-                    </div>
-                    <div class="education-compact-item">
-                        <strong>Secondary Education (CBSE)</strong>
-                        <span>Completed</span>
+            <!-- Secondary Info: Education & Beyond Code Side-by-Side on Desktop -->
+            <div class="about-secondary-grid">
+                <!-- Education -->
+                <div class="education-compact" data-aos="fade-up">
+                    <h3 class="education-compact-title">Education</h3>
+                    <div class="education-compact-list">
+                        <div class="education-compact-item">
+                            <strong>MSc Computer Science</strong>
+                            <span>Pursuing</span>
+                        </div>
+                        <div class="education-compact-item">
+                            <strong>BSc Computer Science</strong>
+                            <span>Completed</span>
+                        </div>
+                        <div class="education-compact-item">
+                            <strong>Senior Secondary (CBSE)</strong>
+                            <span>Completed</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Interests -->
-            <div class="interests-section" data-aos="fade-up">
-                <h3 class="interests-title"><i class="fas fa-rocket"></i> Beyond Code</h3>
-                <div class="interests-grid">
-                    <div class="interest-item">
-                        <i class="fas fa-book"></i>
-                        <span>Tech Blogging</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Open Source</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Gaming</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-futbol"></i>
-                        <span>Sports</span>
+                <!-- Core Tech Stack -->
+                <div class="interests-section" data-aos="fade-up">
+                    <h3 class="interests-title">Core Stack</h3>
+                    <div class="interests-list">
+                        <div class="interests-list-item">
+                            <strong>Native Android</strong>
+                            <span>Kotlin · Compose</span>
+                        </div>
+                        <div class="interests-list-item">
+                            <strong>Cross-Platform</strong>
+                            <span>Flutter · Dart</span>
+                        </div>
+                        <div class="interests-list-item">
+                            <strong>Backend & APIs</strong>
+                            <span>Firebase · Supabase · REST</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,7 +206,7 @@
                     <div class="project-image">
                         <img src="images/cricbud-home-page.png" alt="Cricbud - Live Cricket Scores">
                         <div class="project-overlay">
-                            <a href="https://cricbud.com" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://cricbud.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Visit Cricbud website"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-content">
@@ -233,7 +232,7 @@
                     <div class="project-image">
                         <img src="images/ipl-live-matches.png" alt="IPL Live Matches Website">
                         <div class="project-overlay">
-                            <a href="https://ipllivematches.com" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://ipllivematches.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Visit IPL Live Matches website"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-content">
@@ -257,7 +256,7 @@
                     <div class="project-image">
                         <img src="images/ts_app.webp" alt="The Stitching Partner App">
                         <div class="project-overlay">
-                            <a href="https://play.google.com/store/apps/details?id=com.thestitching.partner" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.thestitching.partner" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View The Stitching Partner on Google Play"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-content">
@@ -395,7 +394,7 @@
                     <div class="project-image">
                         <img src="images/status_saver.png" alt="Status Saver App">
                         <div class="project-overlay">
-                            <a href="https://www.indusappstore.com/apps/productivity/status-saver/com.shekharsuthar234.statussaver" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://www.indusappstore.com/apps/productivity/status-saver/com.shekharsuthar234.statussaver" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Status Saver App on Indus App Store"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-content">
@@ -429,36 +428,36 @@
                 <p class="section-subtitle" data-aos="fade-up">What I can build for you</p>
             </div>
             
-                        <div class="services-grid">
+            <div class="services-grid">
                 <div class="service-card" data-aos="fade-up">
                     <i class="fas fa-mobile-alt service-icon"></i>
                     <h3>Android Development</h3>
-                    <p>Native Android applications built with Kotlin and Jetpack Compose, focusing on performance and modern UI/UX.</p>
+                    <p>Native Android applications built with Kotlin and Jetpack Compose, focusing on performance, clean architecture, and modern UI/UX.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-layer-group service-icon"></i>
                     <h3>Flutter Development</h3>
-                    <p>Cross-platform mobile applications for iOS and Android using Flutter and Dart, delivering native performance from a single codebase.</p>
+                    <p>Cross-platform mobile applications for iOS and Android using Flutter and Dart, delivering high performance from a single codebase.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-laptop-code service-icon"></i>
                     <h3>Web Development</h3>
-                    <p>Responsive, mobile-first websites and web applications using modern web technologies and frameworks.</p>
+                    <p>Responsive, mobile-first websites and web applications built with modern web technologies, fast load times, and clean semantics.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-server service-icon"></i>
-                    <h3>API Integration</h3>
-                    <p>Robust backend integration, RESTful APIs, and cloud services (Firebase, AWS) to power your applications.</p>
+                    <h3>Backend & APIs</h3>
+                    <p>Robust backend integration, RESTful APIs, and cloud services (Firebase, Supabase) engineered to power secure, scalable applications.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-bug service-icon"></i>
+                    <i class="fas fa-wrench service-icon"></i>
                     <h3>Maintenance & Features</h3>
-                    <p>Reliable bug fixing, seamless new feature integration, legacy code refactoring, and ongoing application maintenance.</p>
+                    <p>Reliable bug fixing, seamless feature integration, legacy code refactoring, performance optimization, and regular maintenance.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <i class="fas fa-paint-brush service-icon"></i>
+                    <i class="fas fa-palette service-icon"></i>
                     <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces following Material Design guidelines for a perfect user experience.</p>
+                    <p>Beautiful, intuitive mobile and web interfaces following Material Design guidelines for a seamless, polished user experience.</p>
                 </div>
             </div>
         
@@ -481,8 +480,9 @@
             </div>
 
             <div class="contact-content">
-                <!-- Contact Form -->
+                <!-- Contact Form Card -->
                 <div class="contact-form-wrapper" data-aos="fade-up">
+                    <h3 class="contact-box-title">Send a Message</h3>
                     <form class="contact-form" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
@@ -500,7 +500,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
@@ -510,68 +510,75 @@
                     </form>
                 </div>
 
-                <!-- Contact Cards -->
-                <div class="contact-cards" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                <!-- Contact Details / Quick Channels Card -->
+                <div class="contact-details-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="contact-box-title">Connect Directly</h3>
+                    <!-- Contact Cards -->
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-info">
+                                <h3>Email</h3>
+                                <p class="contact-value">chandrashekharsuthar.work@gmail.com</p>
+                            </div>
+                            <a href="mailto:chandrashekharsuthar.work@gmail.com" class="visit-btn" aria-label="Send email">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
                         </div>
-                        <h3>Email</h3>
-                        <p class="contact-value">chandrashekharsuthar.work@gmail.com</p>
-                        <a href="mailto:chandrashekharsuthar.work@gmail.com" class="visit-btn">
-                            <i class="fas fa-paper-plane"></i> Send
-                        </a>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-card-info">
+                                <h3>LinkedIn</h3>
+                                <p class="contact-value">linkedin.com/in/chandrashekharsuthar</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/chandrashekharsuthar" target="_blank" rel="noopener noreferrer" class="visit-btn" aria-label="Visit LinkedIn">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-card-info">
+                                <h3>GitHub</h3>
+                                <p class="contact-value">github.com/ChandrashekharSuthar</p>
+                            </div>
+                            <a href="https://github.com/ChandrashekharSuthar" target="_blank" rel="noopener noreferrer" class="visit-btn" aria-label="Visit GitHub">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-x-twitter"></i>
+                            </div>
+                            <div class="contact-card-info">
+                                <h3>X (Twitter)</h3>
+                                <p class="contact-value">@sorrychandra</p>
+                            </div>
+                            <a href="https://x.com/sorrychandra" target="_blank" rel="noopener noreferrer" class="visit-btn" aria-label="Visit X (Twitter)">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p class="contact-value">View Profile</p>
-                        <a href="https://www.linkedin.com/in/chandrashekharsuthar" target="_blank" class="visit-btn">
-                            <i class="fas fa-external-link-alt"></i> Visit
+                    <!-- Platform Tonal CTA Buttons -->
+                    <div class="contact-links">
+                        <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" rel="noopener noreferrer" class="contact-link-btn contact-btn-tonal">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Work with me on Fiverr</span>
+                        </a>
+                        <a href="https://www.buymeacoffee.com/ChandrashekharSuthar" target="_blank" rel="noopener noreferrer" class="contact-link-btn contact-btn-tonal">
+                            <i class="fas fa-coffee"></i>
+                            <span>Buy Me a Coffee</span>
                         </a>
                     </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p class="contact-value">@ChandrashekharSuthar</p>
-                        <a href="https://github.com/ChandrashekharSuthar" target="_blank" class="visit-btn">
-                            <i class="fas fa-external-link-alt"></i> Visit
-                        </a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-x-twitter"></i>
-                        </div>
-                        <h3>X (Twitter)</h3>
-                        <p class="contact-value">@sorrychandra</p>
-                        <a href="https://x.com/sorrychandra" target="_blank" class="visit-btn">
-                            <i class="fas fa-external-link-alt"></i> Visit
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Contact Links -->
-                <div class="contact-links" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" class="contact-link-btn">
-                        <i class="fas fa-briefcase"></i>
-                        <div>
-                            <strong>Work with me on Fiverr.com</strong>
-                            <span>Explore my portfolio of past projects</span>
-                        </div>
-                    </a>
-                    <a href="https://www.buymeacoffee.com/ChandrashekharSuthar" target="_blank" class="contact-link-btn">
-                        <i class="fas fa-coffee"></i>
-                        <div>
-                            <strong>Buy Me a Coffee</strong>
-                            <span>Support my work</span>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -579,19 +586,26 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-container">
             <div class="footer-content">
-                <p>&copy; 2026 Chandra Shekhar Suthar • Udaipur, Rajasthan, India • Crafted with <i class="fas fa-heart"></i> and lots of coffee.</p>
-                <div class="footer-socials" role="list" aria-label="Footer social media links">
-                    <a href="https://github.com/ChandrashekharSuthar" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
-                    <a href="https://x.com/sorrychandra" target="_blank" aria-label="X (Twitter) profile"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/chandrashekharsuthar" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="mailto:chandrashekharsuthar.work@gmail.com" aria-label="Email contact"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <div class="footer-left">
+                    <p class="footer-copy">&copy; 2026 Chandra Shekhar Suthar · All rights reserved.</p>
+                    <p class="footer-sub">Building high-quality Native Android & Flutter experiences</p>
                 </div>
-            </div>
-            <!-- Open Source Notice -->
-            <div style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
-                
+                <div class="footer-socials" role="list" aria-label="Footer social media links">
+                    <a href="https://github.com/ChandrashekharSuthar" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://x.com/sorrychandra" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) profile">
+                        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chandrashekharsuthar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:chandrashekharsuthar.work@gmail.com" aria-label="Email contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -626,7 +640,7 @@
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=11"></script>
     
     <!-- Prevent console tampering -->
     <script>
