@@ -2660,6 +2660,19 @@ body {
 
 /* MOBILE APP FRAGMENT POLISH */
 @media (max-width: 768px) {
+    /* Hero Profile Avatar on Mobile - remove outline, border, and glow rings */
+    .profile-pic-container {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .profile-avatar {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
     /* Hero Profile Info & Bio on Mobile */
     .profile-info {
         display: flex !important;
