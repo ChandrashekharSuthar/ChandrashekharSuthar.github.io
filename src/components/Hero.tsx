@@ -2,6 +2,12 @@ import React from 'react';
 import { HeroReviews } from './HeroReviews';
 
 export const Hero: React.FC = () => {
+  const handleHireMeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined' && (window as any).handleServiceToContactClick) {
+      (window as any).handleServiceToContactClick(e);
+    }
+  };
+
   return (
     <section className="hero app-profile-hero" id="main-content" role="main" aria-label="Introduction">
       <div className="container">
@@ -25,20 +31,27 @@ export const Hero: React.FC = () => {
             </p>
             
             <div className="profile-actions">
-              <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-full">
-                <i className="fas fa-briefcase" /> Hire Me via Fiverr
+              <a
+                href="#contact"
+                className="btn btn-primary btn-full hero-hire-btn"
+                onClick={handleHireMeClick}
+              >
+                <i className="fas fa-paper-plane" /> Hire Me
               </a>
               <div className="profile-socials">
-                <a href="https://github.com/ChandrashekharSuthar" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile">
+                <a href="https://github.com/ChandrashekharSuthar" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile" title="GitHub">
                   <i className="fab fa-github" aria-hidden="true" />
                 </a>
-                <a href="https://x.com/sorrychandra" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="X (Twitter) profile">
+                <a href="https://x.com/sorrychandra" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="X (Twitter) profile" title="X (Twitter)">
                   <i className="fab fa-x-twitter" aria-hidden="true" />
                 </a>
-                <a href="https://www.linkedin.com/in/chandrashekharsuthar" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile">
+                <a href="https://www.linkedin.com/in/chandrashekharsuthar" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile" title="LinkedIn">
                   <i className="fab fa-linkedin" aria-hidden="true" />
                 </a>
-                <a href="mailto:chandrashekharsuthar.work@gmail.com" className="social-link" aria-label="Email contact">
+                <a href="https://www.fiverr.com/shekharsuthar07" target="_blank" rel="noopener noreferrer" className="social-link fiverr-social-link" aria-label="Fiverr profile" title="Fiverr">
+                  <span className="fiverr-icon-text">fi<span className="fiverr-dot">.</span></span>
+                </a>
+                <a href="mailto:chandrashekharsuthar.work@gmail.com" className="social-link" aria-label="Email contact" title="Email">
                   <i className="fas fa-envelope" aria-hidden="true" />
                 </a>
               </div>

@@ -329,9 +329,9 @@ window.handleServiceToContactClick = function(e) {
     }
 };
 
-// Attach event listener to .btn-extended-fab
+// Attach event listener to .btn-extended-fab and .hero-hire-btn
 function initExtendedFab() {
-    document.querySelectorAll('.btn-extended-fab').forEach(btn => {
+    document.querySelectorAll('.btn-extended-fab, .hero-hire-btn').forEach(btn => {
         btn.removeEventListener('click', window.handleServiceToContactClick);
         btn.addEventListener('click', window.handleServiceToContactClick);
     });

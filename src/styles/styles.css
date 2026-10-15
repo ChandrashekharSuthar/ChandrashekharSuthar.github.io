@@ -2137,7 +2137,40 @@ button:focus:not(:focus-visible) {
 .profile-socials {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.fiverr-icon-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    display: inline-flex;
+    align-items: baseline;
+    color: inherit;
+    user-select: none;
+}
+
+.fiverr-dot {
+    color: #1DBF73;
+    font-weight: 900;
+}
+
+.social-link.fiverr-social-link:hover,
+.profile-socials .fiverr-social-link:hover {
+    color: #1DBF73 !important;
+    border-color: #1DBF73 !important;
+    background: rgba(29, 191, 115, 0.15) !important;
+}
+
+[data-theme="light"] .social-link.fiverr-social-link:hover,
+[data-theme="light"] .profile-socials .fiverr-social-link:hover {
+    color: #008744 !important;
+    border-color: #008744 !important;
+    background: rgba(0, 135, 68, 0.12) !important;
 }
 
 /* 2. Material Chips for Skills */
