@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Projects } from '../components/Projects';
+import { Services } from '../components/Services';
+import { CoreStack } from '../components/CoreStack';
+import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
+import { ScrollToTop } from '../components/ScrollToTop';
+import { BottomNav } from '../components/BottomNav';
+---
+
+<Layout>
+  <Navbar />
+  <Hero client:load />
+  <About />
+  <Projects />
+  <Services />
+  <CoreStack />
+  <Contact />
+  <Footer />
+  <ScrollToTop />
+  <BottomNav />
+</Layout>

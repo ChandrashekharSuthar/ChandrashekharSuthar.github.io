@@ -2104,9 +2104,13 @@ button:focus:not(:focus-visible) {
 }
 
 .profile-bio {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     max-width: 500px;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
     line-height: 1.6;
 }
 
@@ -2652,9 +2656,26 @@ body {
 
 /* MOBILE APP FRAGMENT POLISH */
 @media (max-width: 768px) {
-    
-    
-    
+    /* Hero Profile Info & Bio on Mobile */
+    .profile-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .profile-bio {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        text-align: center !important;
+        margin: 0 auto 1.5rem auto !important;
+        max-width: 100% !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        color: var(--text-secondary) !important;
+    }
     /* Centered Sticky Headers containing Title and Subtitle */
     .section-header {
         position: -webkit-sticky !important;
@@ -3998,3 +4019,256 @@ body {
         height: 180px !important;
     }
 }
+
+/* ── Staggered Masonry Grid Client Reviews ── */
+.reviews-staggered-section {
+    width: 100%;
+    margin-top: 3.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.reviews-simple-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reviews-simple-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.015em;
+    margin: 0;
+}
+
+/* Container with smooth max-height transition and bottom fade */
+.reviews-masonry-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reviews-masonry-wrapper.is-expanded {
+    max-height: 4000px;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+/* CSS Multi-column Masonry Layout */
+.reviews-masonry-grid {
+    columns: 3;
+    column-gap: 1.25rem;
+    text-align: left;
+    width: 100%;
+}
+
+.staggered-review-card {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.35rem 1.35rem 1.2rem;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.staggered-review-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(156, 214, 125, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* 5 Stars at the Top of the Card */
+.staggered-card-stars {
+    display: flex;
+    gap: 4px;
+    color: #F59E0B; /* Authentic golden star color */
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
+}
+
+/* Natural-wrapping Review Text */
+.staggered-review-body {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin: 0 0 1.25rem 0;
+    text-align: left;
+}
+
+/* Client Details at the Bottom of the Card */
+.staggered-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.staggered-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(156, 214, 125, 0.25), rgba(156, 214, 125, 0.08));
+    border: 1px solid rgba(156, 214, 125, 0.35);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.88rem;
+    flex-shrink: 0;
+}
+
+.staggered-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.staggered-username {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.staggered-user-country {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    line-height: 1.2;
+}
+
+.staggered-user-flag {
+    font-size: 0.82rem;
+}
+
+/* View All Reviews Centered Toggle Button */
+.reviews-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.75rem;
+    position: relative;
+    z-index: 5;
+}
+
+.reviews-view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.75rem 1.85rem;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--outline-variant);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reviews-view-all-btn:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(156, 214, 125, 0.25);
+}
+
+.reviews-view-all-btn i {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+/* Light Theme Support */
+[data-theme="light"] .staggered-review-card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .staggered-card-footer {
+    border-top-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .reviews-view-all-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .reviews-view-all-btn:hover {
+    background: var(--accent);
+    color: #0C3900;
+    border-color: var(--accent);
+}
+
+/* Responsive Masonry Breakpoints */
+@media (max-width: 991px) {
+    .reviews-masonry-grid {
+        columns: 2;
+        column-gap: 1rem;
+    }
+
+    .staggered-review-card {
+        margin-bottom: 1rem;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .reviews-staggered-section {
+        margin-top: 2.5rem;
+    }
+
+    .reviews-simple-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .reviews-simple-title {
+        font-size: 1.35rem;
+    }
+
+    .reviews-masonry-grid {
+        columns: 1;
+        column-gap: 0;
+    }
+
+    .reviews-masonry-wrapper {
+        max-height: 480px;
+    }
+
+    .staggered-review-card {
+        padding: 1.15rem 1.1rem;
+        border-radius: 18px;
+        margin-bottom: 0.95rem;
+    }
+
+    .staggered-review-body {
+        font-size: 0.88rem;
+    }
+
+    .reviews-view-all-btn {
+        padding: 0.7rem 1.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+
+

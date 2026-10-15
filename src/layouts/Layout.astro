@@ -1,0 +1,78 @@
+---
+import '../styles/styles.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Chandra Shekhar Suthar | Mobile App Engineer, Android and Flutter Expert",
+  description = "Experienced Mobile App Engineer from Udaipur, Rajasthan, India specializing in Android, Flutter, Kotlin, Java, and Dart. Building elegant native and cross-platform mobile applications with modern development practices."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://chandrashekharsuthar.github.io');
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title}>
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Mobile App Engineer, Android Developer, Flutter Developer, Kotlin, Java, Dart, Mobile App Development, Cross-platform, iOS, Jetpack Compose, MVVM, Clean Architecture, Firebase, Udaipur, Rajasthan, India">
+    <meta name="author" content="Chandra Shekhar Suthar">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="IN-RJ">
+    <meta name="geo.placename" content="Udaipur">
+    <meta name="geo.position" content="24.585445;73.712479">
+    <meta name="ICBM" content="24.585445, 73.712479">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:title" content="Chandra Shekhar Suthar | Mobile App Engineer, Android and Flutter Expert">
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="https://chandrashekharsuthar.github.io/images/profile_pic.jpeg">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={canonicalURL}>
+    <meta property="twitter:title" content="Chandra Shekhar Suthar | Mobile App Engineer, Android and Flutter Expert">
+    <meta property="twitter:description" content={description}>
+    <meta property="twitter:image" content="https://chandrashekharsuthar.github.io/images/profile_pic.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/profile_pic.jpeg">
+    <link rel="apple-touch-icon" href="images/profile_pic.jpeg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL}>
+</head>
+<body>
+    <slot />
+
+    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script is:inline src="script.js?v=13"></script>
+</body>
+</html>

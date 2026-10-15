@@ -328,3 +328,17 @@ window.handleServiceToContactClick = function(e) {
         }
     }
 };
+
+// Attach event listener to .btn-extended-fab
+function initExtendedFab() {
+    document.querySelectorAll('.btn-extended-fab').forEach(btn => {
+        btn.removeEventListener('click', window.handleServiceToContactClick);
+        btn.addEventListener('click', window.handleServiceToContactClick);
+    });
+}
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initExtendedFab();
+} else {
+    document.addEventListener('DOMContentLoaded', initExtendedFab);
+}
+
