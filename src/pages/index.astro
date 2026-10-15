@@ -12,13 +12,13 @@ import { ScrollToTop } from '../components/ScrollToTop';
 ---
 
 <Layout>
-  <Navbar />
-  <Hero />
-  <About />
-  <Projects />
-  <Services />
-  <CoreStack />
-  <Contact />
-  <Footer />
-  <ScrollToTop />
+  <Navbar client:load />
+  <Hero client:load />
+  <About client:visible />
+  <Projects client:visible />
+  <Services client:visible />
+  <CoreStack client:visible />
+  <Contact client:visible />
+  <Footer client:visible />
+  <ScrollToTop client:idle />
 </Layout>

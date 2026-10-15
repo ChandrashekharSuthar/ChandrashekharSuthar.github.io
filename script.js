@@ -1,11 +1,3 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init({
-    disable: window.innerWidth <= 768,
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    offset: 100
-});
 
 // Copy to clipboard function
 function copyToClipboard(text, button) {
@@ -49,13 +41,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to nav links based on scroll position (mobile bottom-nav & desktop nav)
+// Add active state to nav links based on scroll position
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.bottom-nav-item, .desktop-nav-link');
+const navLinks = document.querySelectorAll('.desktop-nav-link');
 
 window.addEventListener('scroll', () => {
     let current = 'main-content'; // Default to top
-    const offset = window.innerWidth <= 768 ? 140 : 220;
+    const offset = 140;
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -72,9 +64,7 @@ window.addEventListener('scroll', () => {
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        const isMatch = (href === '#main-content' && (current === 'main-content' || current === 'about')) ||
-                        (href === '#' + current && current !== 'main-content' && current !== 'about');
-        if (isMatch) {
+        if (href === '#' + current) {
             link.classList.add('active');
         }
     });

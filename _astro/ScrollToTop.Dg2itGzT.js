@@ -1,0 +1,1 @@
+import{j as o}from"./jsx-runtime.D_zvdyIk.js";import"./index.DLkBFFtG.js";const s=()=>o.jsx("button",{id:"scrollToTop",className:"scroll-to-top","aria-label":"Scroll to top",children:o.jsx("i",{className:"fas fa-arrow-up"})});export{s as ScrollToTop};

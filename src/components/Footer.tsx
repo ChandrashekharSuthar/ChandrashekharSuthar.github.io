@@ -1,16 +1,24 @@
 import React from 'react';
+import { motion } from 'motion/react';
+import { containerVariants, itemVariants } from './FadeInBlur';
 import { socialsData } from '../data/socials';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="container footer-container">
+      <motion.div
+        className="container footer-container"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="footer-content">
-          <div className="footer-left">
+          <motion.div className="footer-left" variants={itemVariants}>
             <p className="footer-copy">&copy; 2026 Chandra Shekhar Suthar · All rights reserved.</p>
             <p className="footer-sub">Building high-quality Native Android & Flutter experiences</p>
-          </div>
-          <div className="footer-socials" role="list" aria-label="Footer social media links">
+          </motion.div>
+          <motion.div className="footer-socials" role="list" aria-label="Footer social media links" variants={itemVariants}>
             {socialsData.map((social, idx) => (
               <a
                 key={idx}
@@ -22,9 +30,9 @@ export const Footer: React.FC = () => {
                 <i className={`${social.iconType} ${social.icon}`} aria-hidden="true" />
               </a>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };

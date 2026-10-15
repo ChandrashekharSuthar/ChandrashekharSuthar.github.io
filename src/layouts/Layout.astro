@@ -60,11 +60,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://chandras
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL}>
@@ -72,7 +71,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://chandras
 <body>
     <slot />
 
-    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script is:inline src="script.js?v=13"></script>
+    <script is:inline src="script.js?v=14"></script>
 </body>
 </html>

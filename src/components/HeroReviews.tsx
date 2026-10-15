@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { containerVariants, itemVariants } from './FadeInBlur';
 import { reviewsData } from '../data/reviews';
 
 export const HeroReviews: React.FC = () => {
@@ -14,9 +16,9 @@ export const HeroReviews: React.FC = () => {
         id="reviewsMasonryWrapper"
         className={`reviews-masonry-wrapper ${isExpanded ? 'is-expanded' : ''}`}
       >
-        <div className="reviews-masonry-grid">
+        <motion.div className="reviews-masonry-grid" variants={containerVariants}>
           {reviewsData.map((review) => (
-            <div key={review.id} className="staggered-review-card">
+            <motion.div key={review.id} className="staggered-review-card" variants={itemVariants}>
               <div className="staggered-card-stars" aria-label="5 stars">
                 {[...Array(review.rating)].map((_, i) => (
                   <i key={i} className="fas fa-star" />
@@ -36,9 +38,9 @@ export const HeroReviews: React.FC = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="reviews-toggle-container">

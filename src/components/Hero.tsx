@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'motion/react';
+import { containerVariants, itemVariants } from './FadeInBlur';
 import { HeroReviews } from './HeroReviews';
 
 export const Hero: React.FC = () => {
@@ -11,8 +13,13 @@ export const Hero: React.FC = () => {
   return (
     <section className="hero app-profile-hero" id="main-content" role="main" aria-label="Introduction">
       <div className="container">
-        <div className="profile-header">
-          <div className="profile-pic-container">
+        <motion.div
+          className="profile-header"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div className="profile-pic-container" variants={itemVariants}>
             <img
               src="images/profile_pic.jpeg"
               alt="Chandra Shekhar Suthar"
@@ -22,23 +29,25 @@ export const Hero: React.FC = () => {
               loading="eager"
               decoding="async"
             />
-          </div>
+          </motion.div>
           <div className="profile-info">
-            <h1 className="profile-name">Chandra Shekhar Suthar</h1>
-            <p className="profile-title">Mobile App Engineer, Android and Flutter Expert</p>
-            <p className="profile-location"><i className="fas fa-map-marker-alt" /> Udaipur, Rajasthan, India</p>
+            <motion.h1 className="profile-name" variants={itemVariants}>Chandra Shekhar Suthar</motion.h1>
+            <motion.p className="profile-title" variants={itemVariants}>Mobile App Engineer, Android and Flutter Expert</motion.p>
+            <motion.p className="profile-location" variants={itemVariants}>
+              <i className="fas fa-map-marker-alt" /> Udaipur, Rajasthan, India
+            </motion.p>
             
-            <div className="profile-quick-stats">
+            <motion.div className="profile-quick-stats" variants={itemVariants}>
               <div className="quick-stat"><strong className="counter" data-target="3" data-suffix="+">3+</strong><span>Years Exp</span></div>
               <div className="quick-stat"><strong className="counter" data-target="10" data-suffix="+">10+</strong><span>Projects</span></div>
               <div className="quick-stat"><strong className="counter" data-target="15" data-suffix="+">15+</strong><span>Clients</span></div>
-            </div>
+            </motion.div>
             
-            <p className="profile-bio">
+            <motion.p className="profile-bio" variants={itemVariants}>
               Crafting elegant mobile experiences with clean architecture. Transforming ideas into scalable native and cross-platform mobile applications.
-            </p>
+            </motion.p>
             
-            <div className="profile-actions">
+            <motion.div className="profile-actions" variants={itemVariants}>
               <a
                 href="#contact"
                 className="btn btn-primary btn-full hero-hire-btn"
@@ -63,12 +72,14 @@ export const Hero: React.FC = () => {
                   <i className="fas fa-envelope" aria-hidden="true" />
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Horizontal Animated Reviews Track directly below CTA buttons */}
-            <HeroReviews />
+            <motion.div variants={itemVariants} style={{ width: '100%' }}>
+              <HeroReviews />
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
