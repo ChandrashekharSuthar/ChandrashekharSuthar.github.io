@@ -2046,7 +2046,8 @@ button:focus:not(:focus-visible) {
 .profile-pic-container {
     width: 140px;
     height: 140px;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem auto;
+    aspect-ratio: 1 / 1;
 }
 
 .profile-avatar {
@@ -2054,8 +2055,8 @@ button:focus:not(:focus-visible) {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--bg-primary);
-    box-shadow: 0 0 0 4px var(--accent);
+    border: none;
+    box-shadow: none;
 }
 
 .profile-name {
@@ -2641,9 +2642,9 @@ body {
 }
 
 
-/* MOBILE FRAGMENTS IMPLEMENTATION */
+/* MOBILE SINGLE SCROLL FLOW */
 @media (max-width: 768px) {
-    /* Hide all sections by default on mobile */
+    /* Display all sections in a continuous natural scroll flow on mobile */
     .app-profile-hero, 
     #about, 
     #projects, 
@@ -2652,34 +2653,19 @@ body {
     #skills, 
     #contact,
     .footer {
-        display: none !important;
-        animation: fadeInFragment 0.3s ease;
-    }
-    
-    /* Only show the sections marked as active fragments (High Specificity) */
-    #main-content.active-fragment,
-    #about.active-fragment,
-    #projects.active-fragment,
-    #services.active-fragment,
-    #core-stack.active-fragment,
-    #skills.active-fragment,
-    #contact.active-fragment,
-    .footer.active-fragment {
         display: block !important;
     }
-
-    @keyframes fadeInFragment {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
     
-    /* Remove padding since it's no longer a long scroll */
     body {
-        padding-bottom: 80px !important; /* Just for bottom nav */
+        padding-bottom: 0 !important;
+    }
+
+    .bottom-nav {
+        display: none !important;
     }
 }
 
-/* Ensure AOS doesn't hide elements on mobile fragments */
+/* Ensure AOS doesn't hide elements on mobile */
 @media (max-width: 768px) {
     [data-aos] {
         opacity: 1 !important;
@@ -2687,7 +2673,7 @@ body {
     }
 }
 
-/* MOBILE APP FRAGMENT POLISH */
+/* MOBILE APP SINGLE SCROLL POLISH */
 @media (max-width: 768px) {
     /* Hero Profile Avatar on Mobile - remove outline, border, and glow rings */
     .profile-pic-container {
@@ -2722,30 +2708,31 @@ body {
         line-height: 1.6 !important;
         color: var(--text-secondary) !important;
     }
-    /* Centered Sticky Headers containing Title and Subtitle */
+
+    /* Sticky Section Headers on Mobile with frosted blur */
     .section-header {
         position: -webkit-sticky !important;
         position: sticky !important;
         top: 0 !important;
         z-index: 100 !important;
-        
         text-align: center !important;
-        
-        /* Edge to edge coverage */
         margin-left: -15px !important;
         margin-right: -15px !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
-        
-        padding-top: 20px !important;
-        padding-bottom: 15px !important;
-        margin-top: -20px !important;
+        padding-top: 14px !important;
+        padding-bottom: 12px !important;
+        margin-top: 0 !important;
         margin-bottom: 24px !important;
-        
-        background: rgba(20, 18, 24, 0.85) !important; /* matches --bg-primary */
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        background: rgba(20, 18, 24, 0.88) !important;
+        backdrop-filter: blur(16px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+
+    [data-theme="light"] .section-header {
+        background: rgba(245, 245, 245, 0.88) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     }
     
     
@@ -3167,9 +3154,8 @@ body {
     .app-profile-hero {
         padding-top: 2rem !important;
         padding-bottom: 3rem !important;
-        min-height: calc(100vh - 40px) !important;
-        display: flex;
-        align-items: center;
+        min-height: auto !important;
+        display: block !important;
         position: relative;
         overflow: hidden;
     }
@@ -3211,6 +3197,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        aspect-ratio: 1 / 1;
     }
 
     .profile-pic-container::before {

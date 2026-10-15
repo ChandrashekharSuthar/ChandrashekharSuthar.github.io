@@ -5,7 +5,7 @@ export const HeroReviews: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="reviews-staggered-section" data-aos="fade-up" data-aos-delay="150">
+    <div className="reviews-staggered-section">
       <div className="reviews-simple-header">
         <h3 className="reviews-simple-title">Client Reviews</h3>
       </div>

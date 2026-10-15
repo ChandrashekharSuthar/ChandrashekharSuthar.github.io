@@ -11,9 +11,17 @@ export const Hero: React.FC = () => {
   return (
     <section className="hero app-profile-hero" id="main-content" role="main" aria-label="Introduction">
       <div className="container">
-        <div className="profile-header" data-aos="fade-up">
+        <div className="profile-header">
           <div className="profile-pic-container">
-            <img src="images/profile_pic.jpeg" alt="Chandra Shekhar Suthar" className="profile-avatar" />
+            <img
+              src="images/profile_pic.jpeg"
+              alt="Chandra Shekhar Suthar"
+              className="profile-avatar"
+              width="160"
+              height="160"
+              loading="eager"
+              decoding="async"
+            />
           </div>
           <div className="profile-info">
             <h1 className="profile-name">Chandra Shekhar Suthar</h1>
@@ -21,9 +29,9 @@ export const Hero: React.FC = () => {
             <p className="profile-location"><i className="fas fa-map-marker-alt" /> Udaipur, Rajasthan, India</p>
             
             <div className="profile-quick-stats">
-              <div className="quick-stat"><strong className="counter" data-target="3" data-suffix="+">0+</strong><span>Years Exp</span></div>
-              <div className="quick-stat"><strong className="counter" data-target="10" data-suffix="+">0+</strong><span>Projects</span></div>
-              <div className="quick-stat"><strong className="counter" data-target="15" data-suffix="+">0+</strong><span>Clients</span></div>
+              <div className="quick-stat"><strong className="counter" data-target="3" data-suffix="+">3+</strong><span>Years Exp</span></div>
+              <div className="quick-stat"><strong className="counter" data-target="10" data-suffix="+">10+</strong><span>Projects</span></div>
+              <div className="quick-stat"><strong className="counter" data-target="15" data-suffix="+">15+</strong><span>Clients</span></div>
             </div>
             
             <p className="profile-bio">

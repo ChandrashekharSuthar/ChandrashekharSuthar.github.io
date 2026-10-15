@@ -26,15 +26,12 @@ function copyToClipboard(text, button) {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        // If it's a bottom nav item AND we are on mobile, let the fragment logic handle it
-        if (this.classList.contains('bottom-nav-item') && window.innerWidth <= 768) {
-            return; // handled by fragment logic
-        }
+        const targetHref = this.getAttribute('href');
+        if (!targetHref || targetHref === '#') return;
         
         e.preventDefault();
         
         // Custom offset for main-content because it's at the top
-        const targetHref = this.getAttribute('href');
         if (targetHref === '#main-content') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
@@ -42,7 +39,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         const target = document.querySelector(targetHref);
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            const offset = window.innerWidth <= 768 ? 20 : 80;
+            const offsetTop = target.offsetTop - offset;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -51,23 +49,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to nav links based on scroll position
+// Add active state to nav links based on scroll position (mobile bottom-nav & desktop nav)
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.bottom-nav-item, .desktop-nav-link');
 
 window.addEventListener('scroll', () => {
-    if (window.innerWidth <= 768) return; // Disable scroll spy on mobile fragments
-    
     let current = 'main-content'; // Default to top
+    const offset = window.innerWidth <= 768 ? 140 : 220;
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= (sectionTop - 220)) {
+        if (window.scrollY >= (sectionTop - offset)) {
             current = section.getAttribute('id');
         }
     });
 
     // If near the bottom of the page, set contact as active
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100)) {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 120)) {
         current = 'contact';
     }
 
@@ -161,91 +159,6 @@ if (scrollToTopBtn) {
     });
 }
 
-// MOBILE FRAGMENTS LOGIC
-function initMobileFragments() {
-    const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
-    const sections = {
-        '#main-content': ['main-content', 'about', 'core-stack'], // Profile tab shows hero + about + core-stack
-        '#projects': ['projects'],
-        '#services': ['services'],
-        '#contact': ['contact']
-    };
-    
-    // Set initial state
-    if (window.innerWidth <= 768) {
-        document.getElementById('main-content').classList.add('active-fragment');
-        document.getElementById('about').classList.add('active-fragment');
-        const coreStack = document.getElementById('core-stack');
-        if (coreStack) coreStack.classList.add('active-fragment');
-        // Footer is ONLY shown on Contact tab
-    }
-
-    bottomNavItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                
-                // Remove active classes
-                bottomNavItems.forEach(nav => nav.classList.remove('active'));
-                document.querySelectorAll('.active-fragment').forEach(el => el.classList.remove('active-fragment'));
-                
-                // Add active to clicked nav
-                item.classList.add('active');
-                
-                // Add active-fragment to target sections
-                const targetHref = item.getAttribute('href');
-                const targetIds = sections[targetHref];
-                
-                if (targetIds) {
-                    targetIds.forEach(id => {
-                        const el = document.getElementById(id);
-                        if (el) el.classList.add('active-fragment');
-                    });
-                }
-                
-                // Show footer ONLY on contact tab
-                if (targetHref === '#contact') {
-                    document.querySelector('.footer').classList.add('active-fragment');
-                }
-                
-                // Scroll to top of fragment
-                window.scrollTo(0, 0);
-            }
-        });
-    });
-    
-    // Handle resize events (reset classes when switching to desktop)
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            // Remove fragment constraints so normal scrolling works
-            document.querySelectorAll('.active-fragment').forEach(el => el.classList.remove('active-fragment'));
-        } else {
-            // Re-apply fragment to whatever is active in bottom nav
-            const activeNav = document.querySelector('.bottom-nav-item.active');
-            if (activeNav) {
-                const targetHref = activeNav.getAttribute('href');
-                const targetIds = sections[targetHref];
-                if (targetIds) {
-                    targetIds.forEach(id => {
-                        const el = document.getElementById(id);
-                        if (el) el.classList.add('active-fragment');
-                    });
-                }
-                
-                if (targetHref === '#contact') {
-                    document.querySelector('.footer').classList.add('active-fragment');
-                }
-            }
-        }
-    });
-}
-
-// Call on load
-document.addEventListener('DOMContentLoaded', initMobileFragments);
-// If already loaded
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    initMobileFragments();
-}
 
 // Number Counter Animation
 function initCounters() {
@@ -291,41 +204,17 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     document.addEventListener('DOMContentLoaded', initCounters);
 }
 
-// Handle Extended FAB click in Services
+// Handle Contact CTA button click (Services Quote, Hero Hire Me, etc.)
 window.handleServiceToContactClick = function(e) {
-    e.preventDefault();
-    
-    if (window.innerWidth <= 768) {
-        // Mobile: Switch fragments to Contact
-        const contactNav = document.querySelector('.bottom-nav-item[href="#contact"]');
-        if (contactNav) {
-            // Remove active classes
-            document.querySelectorAll('.bottom-nav-item').forEach(nav => nav.classList.remove('active'));
-            document.querySelectorAll('.active-fragment').forEach(el => el.classList.remove('active-fragment'));
-            
-            // Add active to contact nav
-            contactNav.classList.add('active');
-            
-            // Activate contact fragment
-            const el = document.getElementById('contact');
-            if (el) el.classList.add('active-fragment');
-            
-            // Show footer
-            document.querySelector('.footer').classList.add('active-fragment');
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    } else {
-        // Desktop: Smooth scroll to contact section
-        const target = document.getElementById('contact');
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+    if (e && e.preventDefault) e.preventDefault();
+    const target = document.getElementById('contact');
+    if (target) {
+        const offset = window.innerWidth <= 768 ? 20 : 80;
+        const offsetTop = target.offsetTop - offset;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
     }
 };
 
@@ -341,4 +230,20 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 } else {
     document.addEventListener('DOMContentLoaded', initExtendedFab);
 }
+
+// Client Reviews View All / Show Less Toggle
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('#reviewsViewAllBtn');
+    if (btn) {
+        const wrapper = document.getElementById('reviewsMasonryWrapper');
+        if (wrapper) {
+            const isExpanded = wrapper.classList.toggle('is-expanded');
+            btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            const span = btn.querySelector('span');
+            const icon = btn.querySelector('i');
+            if (span) span.textContent = isExpanded ? 'Show less' : 'View all reviews';
+            if (icon) icon.className = `fas fa-chevron-${isExpanded ? 'up' : 'down'}`;
+        }
+    }
+});
 
