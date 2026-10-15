@@ -165,7 +165,7 @@ if (scrollToTopBtn) {
 function initMobileFragments() {
     const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
     const sections = {
-        '#main-content': ['main-content', 'about'], // Profile tab shows hero + about
+        '#main-content': ['main-content', 'about', 'core-stack'], // Profile tab shows hero + about + core-stack
         '#projects': ['projects'],
         '#services': ['services'],
         '#contact': ['contact']
@@ -175,6 +175,8 @@ function initMobileFragments() {
     if (window.innerWidth <= 768) {
         document.getElementById('main-content').classList.add('active-fragment');
         document.getElementById('about').classList.add('active-fragment');
+        const coreStack = document.getElementById('core-stack');
+        if (coreStack) coreStack.classList.add('active-fragment');
         // Footer is ONLY shown on Contact tab
     }
 
