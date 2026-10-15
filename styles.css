@@ -966,7 +966,7 @@ button:focus:not(:focus-visible) {
     flex-direction: column;
     background: transparent;
     border: 1px solid var(--outline-variant);
-    border-radius: 24px;
+    border-radius: 18px;
     overflow: hidden;
     box-shadow: none;
 }
@@ -1014,9 +1014,13 @@ button:focus:not(:focus-visible) {
 }
 
 .interests-title {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     color: var(--text-primary);
 }
 
@@ -1025,7 +1029,7 @@ button:focus:not(:focus-visible) {
     flex-direction: column;
     background: transparent;
     border: 1px solid var(--outline-variant);
-    border-radius: 24px;
+    border-radius: 18px;
     overflow: hidden;
     box-shadow: none;
 }
@@ -1557,15 +1561,84 @@ button:focus:not(:focus-visible) {
         font-size: 1.2rem;
     }
     
-    .education-compact-item {
+    .about-secondary-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2.5rem;
+    }
+
+    .education-compact,
+    .interests-section {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .education-compact-title,
+    .interests-title {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 1.25rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 0.85rem !important;
+        color: var(--text-primary) !important;
+        width: 100% !important;
+    }
+
+    .education-compact-list,
+    .interests-list {
+        border: 1px solid var(--outline-variant);
+        border-radius: 18px;
+        overflow: hidden;
+        background: transparent;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .education-compact-item,
+    .interests-list-item {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.5rem;
-        gap: 0.5rem;
+        padding: 1.1rem 1.25rem;
+        gap: 0.45rem;
+        border-bottom: 1px solid var(--outline-variant);
+        box-sizing: border-box;
+        width: 100%;
     }
-    
-    .education-compact-item {
-        padding: 1.5rem 1.2rem;
+
+    .education-compact-item:last-child,
+    .interests-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .education-compact-item strong,
+    .interests-list-item strong {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        line-height: 1.3;
+        white-space: normal;
+    }
+
+    .education-compact-item span,
+    .interests-list-item span {
+        font-size: 0.78rem;
+        color: var(--accent);
+        font-weight: 500;
+        background: rgba(156, 214, 125, 0.08);
+        border: 1px solid rgba(156, 214, 125, 0.2);
+        padding: 0.22rem 0.65rem;
+        border-radius: 100px;
+        letter-spacing: 0.02em;
+        display: inline-block;
+        width: fit-content;
+        max-width: 100%;
+        line-height: 1.2;
+        text-align: left;
+        white-space: normal;
     }
     
     .projects-grid {
@@ -2537,40 +2610,36 @@ body {
         display: none !important;
     }
 
-    /* Remove horizontal scroll on Projects for the Work Tab - make it a vertical list! */
-    .projects-grid {
+    /* Projects & Services Grids on Mobile - Unified Vertical Stacking */
+    .projects-grid,
+    .services-grid,
+    #services .services-grid {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         overflow-x: hidden !important;
         margin: 0 auto !important;
         width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         gap: 20px !important;
     }
     
-    .project-card, .service-card {
-        max-width: 100% !important;
+    .project-card, 
+    .service-card {
         width: 100% !important;
-    }
-    
-    .project-card {
         min-width: 100% !important;
-        width: 100% !important;
+        max-width: 100% !important;
         margin-bottom: 0 !important;
+        box-sizing: border-box !important;
     }
     
-    
-    
+    .service-card {
+        padding: 1.35rem 1.25rem !important;
+    }
 
-    
-    /* Services Tab Polish */
-    #services .services-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        margin: 0 !important;
-        gap: 16px !important;
+    .services-cta-container {
+        margin-top: 1.75rem !important;
     }
 
     
@@ -2684,12 +2753,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .interests-title, .education-compact-title {
-        font-size: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
-    }
-}
+
 
 
 
