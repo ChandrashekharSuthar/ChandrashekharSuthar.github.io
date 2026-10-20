@@ -1870,7 +1870,7 @@ button:focus:not(:focus-visible) {
     font-size: 0.95rem;
     margin-bottom: 2rem;
 }
-.profile-location i { color: var(--accent); }
+.profile-location i { color: inherit; }
 
 .profile-quick-stats {
     display: flex;
@@ -2807,7 +2807,7 @@ button:focus:not(:focus-visible) {
     .profile-title {
         font-size: 1.2rem !important;
         font-weight: 500;
-        color: var(--accent) !important;
+        color: var(--text-secondary) !important;
         margin-bottom: 0.65rem;
         letter-spacing: 0.01em;
         text-align: center !important;
