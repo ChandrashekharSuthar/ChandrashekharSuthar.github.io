@@ -221,19 +221,3 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     document.addEventListener('DOMContentLoaded', initExtendedFab);
 }
 
-// Client Reviews View All / Show Less Toggle
-document.addEventListener('click', function (e) {
-    const btn = e.target.closest('#reviewsViewAllBtn');
-    if (btn) {
-        const wrapper = document.getElementById('reviewsMasonryWrapper');
-        if (wrapper) {
-            const isExpanded = wrapper.classList.toggle('is-expanded');
-            btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-            const span = btn.querySelector('span');
-            const icon = btn.querySelector('i');
-            if (span) span.textContent = isExpanded ? 'Show less' : 'View all reviews';
-            if (icon) icon.className = `fas fa-chevron-${isExpanded ? 'up' : 'down'}`;
-        }
-    }
-});
-

@@ -3564,6 +3564,8 @@ button:focus:not(:focus-visible) {
     margin-top: 3.5rem;
     position: relative;
     text-align: center;
+    scroll-margin-top: 80px;
+    overflow-anchor: none;
 }
 
 .reviews-simple-header {
@@ -3585,6 +3587,7 @@ button:focus:not(:focus-visible) {
     width: 100%;
     max-height: 520px;
     overflow: hidden;
+    overflow-anchor: none;
     -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3750,6 +3753,7 @@ button:focus:not(:focus-visible) {
 @media (max-width: 640px) {
     .reviews-staggered-section {
         margin-top: 2.5rem;
+        scroll-margin-top: 24px;
     }
 
     .reviews-simple-header {
