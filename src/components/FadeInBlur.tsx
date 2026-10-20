@@ -6,19 +6,24 @@ export const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
+      staggerChildren: 0.04,
+      delayChildren: 0,
     },
   },
 };
 
 export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+  hidden: { 
+    opacity: 0, 
+    y: 12,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] },
+    transition: { 
+      duration: 0.3, 
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
@@ -31,7 +36,7 @@ interface FadeInBlurProps {
 export const FadeInBlur: React.FC<FadeInBlurProps> = ({
   children,
   className = "",
-  amount = 0.2,
+  amount = 0.1,
 }) => (
   <motion.div
     variants={containerVariants}
@@ -39,6 +44,7 @@ export const FadeInBlur: React.FC<FadeInBlurProps> = ({
     whileInView="visible"
     viewport={{ once: true, amount }}
     className={className}
+    style={{ willChange: "opacity, transform" }}
   >
     {children}
   </motion.div>
@@ -48,7 +54,11 @@ export const FadeItem: React.FC<{ children: ReactNode; className?: string }> = (
   children,
   className = "",
 }) => (
-  <motion.div variants={itemVariants} className={className}>
+  <motion.div 
+    variants={itemVariants} 
+    className={className}
+    style={{ willChange: "opacity, transform" }}
+  >
     {children}
   </motion.div>
 );

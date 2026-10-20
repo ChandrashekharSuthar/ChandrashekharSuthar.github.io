@@ -89,7 +89,7 @@ button:focus:not(:focus-visible) {
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     z-index: 1000;
     border: none;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: none;
     display: flex;
     align-items: center;
@@ -422,10 +422,11 @@ button:focus:not(:focus-visible) {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(960px, calc(100% - 2rem));
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.12), transparent);
+    background: rgba(0, 0, 0, 0.07);
 }
 
 .section-alt {
@@ -434,7 +435,14 @@ button:focus:not(:focus-visible) {
 }
 
 .section-alt::before {
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.12), transparent);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(960px, calc(100% - 2rem));
+    height: 1px;
+    background: rgba(0, 0, 0, 0.07);
 }
 .section-title {
     font-size: 2rem;
@@ -1120,7 +1128,18 @@ button:focus:not(:focus-visible) {
 .footer {
     background: var(--bg-primary);
     padding: 2.5rem 0;
+    position: relative;
     border-top: none;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(960px, calc(100% - 2rem));
+    height: 1px;
+    background: rgba(0, 0, 0, 0.07);
 }
 .footer-container {
     max-width: 960px;
@@ -1961,17 +1980,19 @@ button:focus:not(:focus-visible) {
     .bottom-nav {
         display: none !important;
     }
-    /* Horizontal Carousel for Projects on Mobile */
+    /* Clean Vertical Stack for Projects on Mobile (prevents nested touch scrolling traps) */
     .projects-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 2rem;
-        gap: 1.5rem;
-        -webkit-overflow-scrolling: touch;
-        padding: 0;
-        margin: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        scroll-snap-type: none !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-overflow-scrolling: auto !important;
     }
     
     .projects-grid::-webkit-scrollbar {
@@ -1979,10 +2000,12 @@ button:focus:not(:focus-visible) {
     }
     
     .project-card {
-    border: none;
-        min-width: 85vw;
-        scroll-snap-align: center;
-        flex-shrink: 0;
+        border: none;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        scroll-snap-align: none !important;
+        flex-shrink: 1 !important;
     }
     
     /* Adjust profile header for mobile edges */
@@ -2303,7 +2326,7 @@ button:focus:not(:focus-visible) {
         background: rgba(244, 244, 245, 0.88) !important;
         backdrop-filter: blur(16px) saturate(180%) !important;
         -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-        border-bottom: none!important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
 .section-header .section-title {
         font-size: 22px !important;
@@ -2336,7 +2359,9 @@ button:focus:not(:focus-visible) {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        overflow-x: hidden !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        scroll-snap-type: none !important;
         margin: 0 auto !important;
         width: 100% !important;
         padding-left: 0 !important;
@@ -2355,6 +2380,7 @@ button:focus:not(:focus-visible) {
         flex: none !important;
         margin-bottom: 0 !important;
         box-sizing: border-box !important;
+        scroll-snap-align: none !important;
     }
     
     .service-card,
@@ -2579,7 +2605,7 @@ button:focus:not(:focus-visible) {
         backdrop-filter: blur(16px) saturate(180%) !important;
         -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
         border: none !important;
-        border-bottom: none !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
         box-shadow: none !important;
         z-index: 1000 !important;
         align-items: center !important;
@@ -3513,9 +3539,9 @@ button:focus:not(:focus-visible) {
         border-top: none;
     }
 
-    /* ── Section before line: thinner & cleaner on desktop ── */
+    /* ── Section before line: clean minimal hairline on desktop ── */
     .section::before {
-        opacity: 0.4;
+        opacity: 1;
     }
 }
 
@@ -3758,6 +3784,7 @@ button:focus:not(:focus-visible) {
         font-size: 0.85rem;
     }
 }
+
 
 
 
