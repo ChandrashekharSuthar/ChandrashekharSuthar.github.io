@@ -36,13 +36,6 @@ export const Hero: React.FC = () => {
             <motion.p className="profile-location" variants={itemVariants}>
               <i className="fas fa-map-marker-alt" /> Udaipur, Rajasthan, India
             </motion.p>
-            
-            <motion.div className="profile-quick-stats" variants={itemVariants}>
-              <div className="quick-stat"><strong className="counter" data-target="3" data-suffix="+">3+</strong><span>Years Exp</span></div>
-              <div className="quick-stat"><strong className="counter" data-target="10" data-suffix="+">10+</strong><span>Projects</span></div>
-              <div className="quick-stat"><strong className="counter" data-target="15" data-suffix="+">15+</strong><span>Clients</span></div>
-            </motion.div>
-            
             <motion.p className="profile-bio" variants={itemVariants}>
               Crafting elegant mobile experiences with clean architecture. Transforming ideas into scalable native and cross-platform mobile applications.
             </motion.p>

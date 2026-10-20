@@ -1864,7 +1864,7 @@ button:focus:not(:focus-visible) {
 .profile-location {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 .profile-location i { color: inherit; }
 
@@ -2811,7 +2811,7 @@ button:focus:not(:focus-visible) {
 
     .profile-location {
         font-size: 0.92rem;
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.25rem;
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
