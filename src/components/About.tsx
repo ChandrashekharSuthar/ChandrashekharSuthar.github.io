@@ -29,20 +29,6 @@ export const About: React.FC = () => {
                 When I'm not coding, you'll find me exploring new technologies, contributing to 
                 open-source projects, or sharing knowledge with the developer community.
               </p>
-              <motion.div className="about-highlights" variants={containerVariants}>
-                <motion.div className="highlight-item" variants={itemVariants}>
-                  <i className="fas fa-cubes" />
-                  <span>Clean Architecture Expert</span>
-                </motion.div>
-                <motion.div className="highlight-item" variants={itemVariants}>
-                  <i className="fab fa-google-play" />
-                  <span>Play Store Publishing</span>
-                </motion.div>
-                <motion.div className="highlight-item" variants={itemVariants}>
-                  <i className="fas fa-sync-alt" />
-                  <span>Agile Development</span>
-                </motion.div>
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>
