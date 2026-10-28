@@ -20,7 +20,7 @@ A modern, responsive portfolio website for Android developers built with HTML, C
 
 ## 📸 Preview
 
-![Portfolio Preview](images/profile_pic.jpeg)
+![Portfolio Preview](images/profile_pic.png)
 
 ## 🛠️ Technologies Used
 
@@ -65,7 +65,7 @@ You're welcome to use this portfolio as a template for your own website! Here's 
 ### Important Files to Update
 
 - `index.html` - All personal content and meta tags
-- `images/profile_pic.jpeg` - Your profile picture
+- `images/profile_pic.png` - Your profile picture
 - `sitemap.xml` - Your website URL
 - `robots.txt` - Your website URL
 - `.well-known/security.txt` - Your contact email

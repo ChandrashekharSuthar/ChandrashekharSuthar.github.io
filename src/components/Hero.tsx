@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
         >
           <motion.div className="profile-pic-container" variants={itemVariants}>
             <img
-              src="images/profile_pic.jpeg"
+              src="images/profile_pic.png"
               alt="Chandra Shekhar Suthar"
               className="profile-avatar"
               width="160"
